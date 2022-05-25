@@ -1,1 +1,1 @@
-# Sycofast
+# Psicofast
