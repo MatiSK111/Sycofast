@@ -26460,8 +26460,20 @@ a.badge-slack:hover, a.badge-slack:focus {
     box-shadow: 3px 3px 6px #b8b9be, -3px -3px 6px #ffffff;
 }
 
-.btn.btn-pill {
+.btn-pill {
+    border-radius: 3rem;
+    width: 150px;
+    height: 150px;
+    position: relative;
+    transition: all 0.2s ease;
+    letter-spacing: 0.025em;
+    font-size: 1rem;
+    border-color: #D1D9E6;
+    box-shadow: 3px 3px 6px #b8b9be, -3px -3px 6px #ffffff;
+}
+.btn {
     border-radius: 2rem;
+    
 }
 
 .btn.btn-circle {
@@ -26550,9 +26562,10 @@ a.badge-slack:hover, a.badge-slack:focus {
 
 .btn-icon-only {
     position: relative;
-    width: 2.575rem;
-    height: 2.575rem;
+    width: 6.5rem;
+    height: 6.5rem;
     padding: 0;
+    border-radius: 100%;
 }
 
 .btn-icon-only span, .btn-icon-only i {

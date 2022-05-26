@@ -16,11 +16,10 @@
 
 
 <!-- Favicon -->
-<link rel="apple-touch-icon" sizes="120x120" href="./assets/img/favicon/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="./assets/img/favicon/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="./assets/img/favicon/favicon-16x16.png">
+
+<link rel="icon" type="image/png" sizes="16x16" href="./assets/img/favicon/Psicofastlogoround.png">
 <link rel="manifest" href="./assets/img/favicon/site.webmanifest">
-<link rel="mask-icon" href="./assets/img/favicon/safari-pinned-tab.svg" color="#ffffff">
+
 <meta name="msapplication-TileColor" content="#ffffff">
 <meta name="theme-color" content="#ffffff">
 
@@ -32,35 +31,20 @@
 
 </head>
 <body>
-
-<center>
-<h1>Menu Principal</h1>
-</center>
+<br><br>
 
 
+<div class="d-flex justify-content-around">
+  <div class="p-2 "><button class="btn  btn-primary" type="button"><img src="assets\img\iconos\logout.png" height ="30" width="30" /></button></div>
+  <div class="p-2"><h1 style="color:rgb(120,120,171);" >Menu Principal</h1></div>
+  <div class="p-2 ">
 
-<div class="container">
-  <div class="row">
-    <div class="col">
-      1 of 2
-      <button class="btn btn-pill btn-primary" type="button">Button</button>
-    </div>
-    <div class="col">
-      2 of 2
-      <button class="btn btn-pill btn-primary" type="button">Button</button>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col">
-      1 of 3
-    </div>
-    <div class="col">
-      2 of 3
-    </div>
-    <div class="col">
-      3 of 3
-    </div>
+  <button class="btn btn-icon-only btn-pill btn-primary" type="button" aria-label="up button" title="up button">
+                    <img src="assets\img\iconos\account.png" height ="90" width="90"/>
+                </button>
   </div>
 </div>
+
+
 </body>
 </html>
