@@ -87,6 +87,7 @@ html {
     line-height: 1.15;
     -webkit-text-size-adjust: 100%;
     -webkit-tap-highlight-color: rgba(38, 40, 51, 0);
+   
 }
 
 article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
@@ -101,7 +102,8 @@ body {
     line-height: 1.5;
     color: #44476A;
     text-align: left;
-    background-color: #e6e7ee;
+    background: linear-gradient(to bottom right, #E1EAF5, white);
+    
 }
 
 [tabindex="-1"]:focus {
@@ -26562,8 +26564,8 @@ a.badge-slack:hover, a.badge-slack:focus {
 
 .btn-icon-only {
     position: relative;
-    width: 6.5rem;
-    height: 6.5rem;
+    width: 8rem;
+    height: 8rem;
     padding: 0;
     border-radius: 100%;
 }
@@ -32267,4 +32269,19 @@ article a:hover {
     box-shadow: inset 2px 2px 5px #b8b9be, inset -3px -3px 7px #FFFFFF;
 }
 
+::-webkit-scrollbar{
+
+    with:10px;
+}
+
+::-webkit-scrollbar-track{
+
+    background: #7878AB;
+    border-radius: 50px;
+}
+
+::-webkit-scrollbar-thumb{
+
+    background: #fff;
+}
 /*# sourceMappingURL=neumorphism.css.map */
