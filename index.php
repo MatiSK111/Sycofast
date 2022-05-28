@@ -34,33 +34,41 @@
 
 <br><br>
 
+<div class="col-8 offset-2 ">
+                <div class="card bg-primary shadow-soft text-center border-light">
+                    <div class="card-body">
+                    <br><br>
 
-<div class="d-flex justify-content-around">
-  <div class="p-2 "><button class="btn  btn-primary" type="button"><img src="assets\img\iconos\logout.png" height ="30" width="30" /></button></div>
-  <div class="p-2"><h1 style="color:rgb(120,120,171);" >Menu Principal</h1></div>
-  <div class="p-2 ">
-    <button class="btn btn-icon-only btn-pill btn-primary" type="button" aria-label="up button" title="up button">
-                <img src="assets\img\iconos\account.png" height ="110" width="110"/>
-   </button>
-  </div>
-</div>
-<br><br><br><br><br>
-<div class="container">
-  <div class="row align-items-end">
-      <div class="col">
-      <button class="btn btn-lg btn-primary" type="button"><pre>    <h3>   Realizar Test   </h3>    </pre><img src="assets\img\iconos\test.png" height ="50" width="50" /></button>
-      </div>
-      <div class="col">
-      <button class="btn btn-lg btn-primary" type="button"><pre>    <h3>   Ver mis Test   </h3>    </pre><img src="assets\img\iconos\lista.png" height ="50" width="50" /></button>
-      </div>
-      <div class="col">
-      <button class="btn btn-lg btn-primary" type="button"><pre>    <h3>   Mis Estadisticas   </h3>    </pre><img src="assets\img\iconos\stats.png" height ="50" width="50" /></button>
-      </div>
-    </div>
-    
-</div>   
+                      <div class="d-flex justify-content-around">
+                        <div class="p-2 "><button class="btn  btn-primary" type="button"><img src="assets\img\iconos\logout.png" height ="30" width="30" /></button></div>
+                        <div class="p-2"><h1 style="color:rgb(120,120,171);" >Menu Principal</h1></div>
+                        <div class="p-2 ">
+                          <button class="btn btn-icon-only btn-pill btn-primary" type="button" aria-label="up button" title="up button">
+                            <img src="assets\img\iconos\account.png" height ="110" width="110"/>
+                         </button>
+                       </div>
+                     </div>
 
-<br><br><br><br><br><br><br><br>
+                     <br><br><br><br><br>
+                      <div class="container">
+                        <div class="row align-items-end">
+                            <div class="col">
+                            <button class="btn btn-lg btn-primary" type="button"><pre>    <h3>   Realizar Test   </h3>    </pre><img src="assets\img\iconos\test.png" height ="50" width="50" /></button>
+                            </div>
+                            <div class="col">
+                            <button class="btn btn-lg btn-primary" type="button"><pre>    <h3>   Ver mis Test   </h3>    </pre><img src="assets\img\iconos\lista.png" height ="50" width="50" /></button>
+                            </div>
+                            <div class="col">
+                            <button class="btn btn-lg btn-primary" type="button"><pre>    <h3>   Mis Estadisticas   </h3>    </pre><img src="assets\img\iconos\stats.png" height ="50" width="50" /></button>
+                            </div>
+                          </div>
+                      </div> 
+                      <br><br><br><br><br>
+
+
+                    </div>
+                  </div>
+            </div>
 <br><br><br><br><br><br><br><br>
 <br><br><br>
 

@@ -102,7 +102,8 @@ body {
     line-height: 1.5;
     color: #44476A;
     text-align: left;
-    background: linear-gradient(to bottom right, #E1EAF5, white);
+    background: linear-gradient(to bottom right, white, #c4c1eb);
+    
     
 }
 
