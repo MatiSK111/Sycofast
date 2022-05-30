@@ -32,9 +32,9 @@
 </head>
 <body>
 
-<br><br>
+<br><br><br><br>
 
-<div class="col-8 offset-2 ">
+<div class="col-8 offset-2" style="padding-bottom:500px">
                 <div class="card bg-primary shadow-soft text-center border-light">
                     <div class="card-body">
                     <br><br>
@@ -56,10 +56,10 @@
                             <button class="btn btn-lg btn-primary" type="button"><pre>    <h3>   Realizar Test   </h3>    </pre><img src="assets\img\iconos\test.png" height ="50" width="50" /></button>
                             </div>
                             <div class="col">
-                            <button class="btn btn-lg btn-primary" type="button"><pre>    <h3>   Ver mis Test   </h3>    </pre><img src="assets\img\iconos\lista.png" height ="50" width="50" /></button>
+                            <button class="btn2 btn-lg btn-primary2" type="button"><pre>    <h3>   Ver mis Test   </h3>    </pre><img src="assets\img\iconos\lista.png" height ="50" width="50" /></button>
                             </div>
                             <div class="col">
-                            <button class="btn btn-lg btn-primary" type="button"><pre>    <h3>   Mis Estadisticas   </h3>    </pre><img src="assets\img\iconos\stats.png" height ="50" width="50" /></button>
+                            <button class="btn2 btn-lg btn-primary3" type="button"><pre>    <h3>   Mis Estadisticas   </h3>    </pre><img src="assets\img\iconos\stats.png" height ="50" width="50" /></button>
                             </div>
                           </div>
                       </div> 
@@ -69,8 +69,6 @@
                     </div>
                   </div>
             </div>
-<br><br><br><br><br><br><br><br>
-<br><br><br>
 
 
 </body>
