@@ -11,6 +11,8 @@
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
 <!-- Pixel CSS -->
+<link rel="icon" type="image/png" sizes="16x16" href="./assets/img/favicon/Psicofastlogoround.png">
+
 
 <link type="text/css" href="./css/neumorphism.css" rel="stylesheet">
 
@@ -25,7 +27,9 @@
 <div class="col-6 offset-3 " style="padding-bottom: 500px" >
                 <div class="card shadow-soft text-center border-light" id="card">
                 <form>
+                <br><br>
                     <div class="card-body">
+                    <img src="assets\img\iconos\Psicofastlogoround.png">
                     <br><br>
                     <h1>Iniciar sesion</h1><br>
                         
