@@ -1,0 +1,20 @@
+
+#card {
+  color:  black;
+  background-color: #d1d1e0;
+  border: 2px solid ;
+  border-radius: 12px;
+  padding: 5px;
+  box-shadow: 5px 8px 16px #d1d1e0;
+}
+#ingre{
+    color:  black;
+    background-color: #b3b3cc;
+}
+#body{
+    background: rgb(255,255,255);
+    background: linear-gradient(187deg, rgba(255,255,255,1) 0%, rgba(171,188,222,1) 100%, rgba(191,191,191,1) 100%);
+    background-repeat: no-repeat;
+    background-size: 50px 100px;
+    background-size: 1000% 1000%;
+}
