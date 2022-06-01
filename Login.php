@@ -27,11 +27,11 @@
 <div class="col-6 offset-3 " style="padding-bottom: 500px" >
                 <div class="card shadow-soft text-center border-light" id="card">
                 <form>
-                <br><br>
+                <br>
                     <div class="card-body">
                     <img src="assets\img\iconos\Psicofastlogoround.png">
                     <br><br>
-                    <h1>Iniciar sesion</h1><br>
+                    <h1 style="color:rgb(120,120,171);" >Iniciar sesion</h1><br>
                         
                             <div class="mb-3">
                                 
