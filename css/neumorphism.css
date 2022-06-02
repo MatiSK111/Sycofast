@@ -2939,6 +2939,23 @@ textarea.form-control {
     transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 
+.btn2 {
+    display: inline-block;
+    font-weight: 400;
+    color: #44476A;
+    text-align: center;
+    vertical-align: middle;
+    -webkit-user-select: none;
+    user-select: none;
+    background-color: transparent;
+    border: 0.0625rem solid transparent;
+    padding: 0.55rem 0.95rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: 0.55rem;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
 @media (prefers-reduced-motion: reduce) {
     .btn {
         transition: none;
@@ -2995,6 +3012,100 @@ fieldset:disabled a.btn {
     background-color: #e6e7ee;
     border-color: #e6e7ee;
 }
+
+.btn-primary2 {
+    color: #31344b;
+    background: linear-gradient(90deg, #e3ffe7 0%, #d9e7ff 100%);
+    border-color: #e6e7ee;
+    box-shadow: inset 0 1px 0 rgba(236, 240, 243, 0.15), 0 1px 1px rgba(38, 40, 51, 0.075);
+}
+
+.btn-primary2:hover {
+    color: #31344b;
+    background-color: #cfd1df;
+    border-color: #c8cad9;
+}
+
+.btn-primary2:focus, .btn-primary2.focus {
+    box-shadow: inset 0 1px 0 rgba(236, 240, 243, 0.15), 0 1px 1px rgba(38, 40, 51, 0.075), 0 0 0 0.0625rem rgba(203, 204, 214, 0.5);
+}
+
+.btn-primary2.disabled, .btn-primary2:disabled {
+    color: #31344b;
+    background-color: #e6e7ee;
+    border-color: #e6e7ee;
+}
+
+.btn-primary3 {
+    color: #31344b;
+    background: linear-gradient(90deg, #efd5ff 0%, #515ada 100%);
+    border-color: #e6e7ee;
+    box-shadow: inset 0 1px 0 rgba(236, 240, 243, 0.15), 0 1px 1px rgba(38, 40, 51, 0.075);
+}
+
+.btn-primary3:hover {
+    color: #31344b;
+    background-color: #cfd1df;
+    border-color: #c8cad9;
+}
+
+.btn-primary3:focus, .btn-primary3.focus {
+    box-shadow: inset 0 1px 0 rgba(236, 240, 243, 0.15), 0 1px 1px rgba(38, 40, 51, 0.075), 0 0 0 0.0625rem rgba(203, 204, 214, 0.5);
+}
+
+.btn-primary3.disabled, .btn-primary3:disabled {
+    color: #31344b;
+    background-color: #e6e7ee;
+    border-color: #e6e7ee;
+}
+
+.btn-primary4 {
+    color: #31344b;
+    background: linear-gradient(90deg, #e34b7ebe 0%, #cc4ed5b0 100%);
+    border-color: #e6e7ee;
+    box-shadow: inset 0 1px 0 rgba(236, 240, 243, 0.15), 0 1px 1px rgba(38, 40, 51, 0.075);
+}
+
+.btn-primary4:hover {
+    color: #31344b;
+    background-color: #cfd1df;
+    border-color: #c8cad9;
+}
+
+.btn-primary4:focus, .btn-primary4.focus {
+    box-shadow: inset 0 1px 0 rgba(236, 240, 243, 0.15), 0 1px 1px rgba(38, 40, 51, 0.075), 0 0 0 0.0625rem rgba(203, 204, 214, 0.5);
+}
+
+.btn-primary4.disabled, .btn-primary4:disabled {
+    color: #31344b;
+    background-color: #e6e7ee;
+    border-color: #e6e7ee;
+}
+
+
+.btn-primary5 {
+    color: #31344b;
+    background: linear-gradient(90deg, #1CB5E0 0%, #000851 100%);
+    border-color: #e6e7ee;
+    box-shadow: inset 0 1px 0 rgba(236, 240, 243, 0.15), 0 1px 1px rgba(38, 40, 51, 0.075);
+}
+
+.btn-primary5:hover {
+    color: #31344b;
+    background-color: #cfd1df;
+    border-color: #c8cad9;
+}
+
+.btn-primary5:focus, .btn-primary5.focus {
+    box-shadow: inset 0 1px 0 rgba(236, 240, 243, 0.15), 0 1px 1px rgba(38, 40, 51, 0.075), 0 0 0 0.0625rem rgba(203, 204, 214, 0.5);
+}
+
+.btn-primary5.disabled, .btn-primary5:disabled {
+    color: #31344b;
+    background-color: #e6e7ee;
+    border-color: #e6e7ee;
+}
+
 
 .btn-primary:not(:disabled):not(.disabled):active, .btn-primary:not(:disabled):not(.disabled).active,
   .show > .btn-primary.dropdown-toggle {
@@ -4944,6 +5055,8 @@ fieldset:disabled a.btn {
     border-radius: 0.3rem;
 }
 
+
+
 .btn-sm, .btn-group-sm > .btn {
     padding: 0.45rem 0.5rem;
     font-size: 0.875rem;
@@ -6507,10 +6620,10 @@ input[type="button"].btn-block {
     flex-direction: column;
     min-width: 0;
     word-wrap: break-word;
-    background-color: #e6e7ee;
+    background-color: #FFFFFF;
     background-clip: border-box;
     border: 0.0625rem solid rgba(243, 247, 250, 0.05);
-    border-radius: 0.55rem;
+    border-radius: 0.7rem;
 }
 
 .card > hr {

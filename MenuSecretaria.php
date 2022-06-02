@@ -41,30 +41,38 @@
 
                       <div class="d-flex justify-content-around">
                         <div class="p-2 "><button class="btn  btn-primary" type="button"><img src="assets\img\iconos\logout.png" height ="30" width="30" /></button></div>
-                        <div class="p-2"><h1 style="color:rgb(120,120,171);" >Menu Principal</h1></div>
+                        <div class="p-2"><h1 style="color:rgb(120,120,171);" >Menu Secretaria</h1></div>
                         <div class="p-2 ">
                           <button class="btn btn-icon-only btn-pill btn-primary" type="button" aria-label="up button" title="up button">
-                            <img src="assets\img\iconos\account.png" height ="110" width="110"/>
+                            <img src="assets\img\iconos\secre.jpg" height ="110" width="110" Style="border-radius:150px"/>
                          </button>
                        </div>
                      </div>
 
-                     <br><br><br><br><br>
+                     <br><br>
                       <div class="container">
                         <div class="row align-items-end">
                             <div class="col">
-                            <button class="btn btn-lg btn-primary" type="button"><pre>    <h3 >   Realizar Test   </h3>    </pre><img src="assets\img\iconos\test.png" height ="50" width="50" /></button>
+                            <button class="btn btn-lg btn-primary4" type="button"><pre>   <h3 Style="Color:#FFF"> Registrar Paciente </h3>   </pre><img src="assets\img\iconos\group.png" height ="50" width="50" /></button>
                             </div>
                             <div class="col">
-                            <button class="btn btn-lg btn-primary2" type="button"><pre>    <h3 >   Ver mis Test   </h3>    </pre><img src="assets\img\iconos\lista.png" height ="50" width="50" /></button>
-                            </div>
-                            <div class="col">
-                            <button class="btn btn-lg btn-primary3" type="button"><pre>    <h3 Style="Color:#FFF">   Mis Estadisticas   </h3>    </pre><img src="assets\img\iconos\stats.png" height ="50" width="50" /></button>
-                            </div>
+                            <button class="btn btn-lg btn-primary3" type="button"><pre>    <h3 Style="Color:#FFF">        Enviar Test        </h3>   </pre><img src="assets\img\iconos\comment.png" height ="50" width="50" /></button>
+                           
                           </div>
                       </div> 
-                      <br><br><br><br>
+                      <br><br>
+                      <div class="container">
+                        <div class="row align-items-end">
+                            <div class="col">
+                            <button class="btn btn-lg btn-primary3" type="button"><pre>   <h3 Style="Color:#FFF">    Ver  Registros      </h3>    </pre><img src="assets\img\iconos\verify.png" height ="50" width="50" /></button>
+                            </div>
+                            <div class="col">
+                            <button class="btn btn-lg btn-primary4" type="button"><pre>    <h3 Style="Color:#FFF">Gestionar Pacientes </h3>    </pre><img src="assets\img\iconos\edit.png" height ="50" width="50" /></button>
+                           
+                          </div>
+                      </div> 
 
+                      <br><br>  <br><br>
 
                     </div>
                   </div>
