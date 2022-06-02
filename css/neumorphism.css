@@ -17022,7 +17022,7 @@ a.text-slack:hover, a.text-slack:focus {
   h3 {
         page-break-after: avoid;
     }
-  @    page {
+  @page {
         size: a3;
     }
 
@@ -32383,19 +32383,8 @@ article a:hover {
     box-shadow: inset 2px 2px 5px #b8b9be, inset -3px -3px 7px #FFFFFF;
 }
 
-::-webkit-scrollbar{
-
-    with:10px;
+#grafica{
+    max-width: 90%;
 }
 
-::-webkit-scrollbar-track{
-
-    background: #7878AB;
-    border-radius: 50px;
-}
-
-::-webkit-scrollbar-thumb{
-
-    background: #fff;
-}
 /*# sourceMappingURL=neumorphism.css.map */
