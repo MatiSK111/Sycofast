@@ -15,7 +15,10 @@
 
 
 <link type="text/css" href="./css/neumorphism.css" rel="stylesheet">
-
+<!-- Validaciones -->
+<script src="javascript/validarformusuario.js"></script>
+<!-- Alertas facheritas -->
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 </head>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
@@ -26,7 +29,7 @@
 
 <div class="col-6 offset-3 " style="padding-bottom: 500px" >
                 <div class="card shadow-soft text-center border-light" id="card">
-                <form>
+                <form name="login" action="procesalogin.php" method="post" >
                 <br>
                     <div class="card-body">
                     <img src="assets\img\iconos\Psicofastlogoround.png">
@@ -35,21 +38,34 @@
                         
                             <div class="mb-3">
                                 
-                                <input type="text" class="form-control col-6 offset-3" id="user" placeholder="Usuario">
+                                <input type="text" class="form-control col-6 offset-3" id="user"name="user" placeholder="Usuario">
                             </div>
                             <br>
                             <div class="mb-3">
                                
-                                <input type="password" class="form-control col-6 offset-3" id="pass" placeholder="Contraseña">
+                                <input type="password" class="form-control col-6 offset-3" id="pass"name="pass" placeholder="Contraseña">
                             </div>
                             <br>
-                            <button type="submit" class="btn btn-primary" id="ingre">Ingresar</button>
+                            <button type="button" class="btn btn-primary" id="btnregistrar" value="Ingresar" onclick="validarlogin();">Ingresar</button>
                         
                         <br><br>
                     </div>
                     </form>
                 </div>
 </div>
+
+<?php
+        if(isset($_GET['error']))
+        {
+            ?>
+        <script>
+        swal("Error!", "No se encuentra registrado", "error");
+        document.login.user.focus();
+        </script>
+
+        <?php
+        }
+        ?>
 
 </body>
 </html>
