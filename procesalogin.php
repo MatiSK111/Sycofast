@@ -14,7 +14,7 @@ $datos=mysqli_fetch_array($result);
 
 if($cont!=0)
 {
-    $_SESSION['user']=$datos['nombres']." ".$datos['apellidos'];
+    $_SESSION['user']=$datos['nombres'];
     $_SESSION['tipousu']=$datos['tipo'];
     $_SESSION['id']=$datos['idusuario'];
    // ojito aqui que se puede agregar eso
