@@ -37,7 +37,7 @@
                         
                             <div class="mb-3">
                                 
-                                <input type="mail" class="form-control col-6 offset-3" id="mail"name="mail" placeholder="Correo Electronico">
+                                <input type="email" class="form-control col-6 offset-3" id="mail"name="mail" placeholder="Correo Electronico">
                             </div>
                             <br>
                            
