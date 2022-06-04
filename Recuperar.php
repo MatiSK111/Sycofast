@@ -15,8 +15,7 @@
 
 
 <link type="text/css" href="./css/neumorphism.css" rel="stylesheet">
-<!-- Validaciones -->
-<script src="javascript/validarformusuario.js"></script>
+
 <!-- Alertas facheritas -->
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 </head>
@@ -29,26 +28,22 @@
 
 <div class="col-6 offset-3 " style="padding-bottom: 500px" >
                 <div class="card shadow-soft text-center border-light" id="card">
-                <form name="login" action="procesalogin.php" method="post" >
+                <form name="login" action="EnviarCorreo.php" method="post" >
                 <br>
                     <div class="card-body">
                     <img src="assets\img\iconos\Psicofastlogoround.png">
                     <br><br>
-                    <h1 style="color:rgb(120,120,171);" >Iniciar sesion</h1><br>
+                    <h1 style="color:rgb(120,120,171);" >Recuperar Clave</h1><br>
                         
                             <div class="mb-3">
                                 
-                                <input type="text" class="form-control col-6 offset-3" id="user"name="user" placeholder="Usuario">
+                                <input type="mail" class="form-control col-6 offset-3" id="mail"name="mail" placeholder="Correo Electronico">
                             </div>
                             <br>
-                            <div class="mb-3">
-                               
-                                <input type="password" class="form-control col-6 offset-3" id="pass"name="pass" placeholder="Contraseña">
-                            </div>
+                           
                             <br>
-                            <button type="button" class="btn btn-primary" id="btnregistrar" value="Ingresar" onclick="validarlogin();">Ingresar</button>
-                            <br><br>
-                            <a href="Recuperar.php">Olvidaste tu clave? Recuperar</a>
+                            <button type="submit" class="btn btn-primary" id="btnregistrar" value="Ingresar" >Recuperar</button>
+                            
                         
                         <br><br>
                     </div>
@@ -61,7 +56,7 @@
         {
             ?>
         <script>
-        swal("Error!", "No se encuentra registrado", "error");
+        swal("Error!", "Correo no se encuentra registrado", "error");
         document.login.user.focus();
         </script>
 
@@ -74,15 +69,13 @@
         {
             ?>
         <script>
-        swal("Enviado!", "Nueva clave enviada a su correo", "success");
-        
+        swal("Error!", "Correo no se encuentra registrado", "error");
+        document.login.user.focus();
         </script>
 
         <?php
         }
         ?>
-
-
 
 
 </body>

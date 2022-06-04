@@ -4,7 +4,7 @@ include("functions/setup.php");
 
 session_start();
 //hay que cambiar nombre por usuario en la tabla
-$sql="select * from usuario where nombres='".$_POST['user']."' and clave='".md5($_POST['pass'])."' and estado >= 1";
+$sql="select * from usuario where usuario='".$_POST['user']."' and clave='".md5($_POST['pass'])."' and estado >= 1";
 //Cambiar la clave tambien por un varchar de arto pa encriptar
 echo $sql;
 //die; cieere de ejecución hace un stop
