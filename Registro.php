@@ -25,16 +25,16 @@
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
 <body id="body" >
-<br><br>
-<br><br><br><br><br>
+<br>
+
 
 <div class="col-6 offset-3 " style="padding-bottom: 500px" >
                 <div class="card shadow-soft text-center border-light" id="card">
                 <form name="form1" action="procesaregistro.php" method="post" enctype="multipart/form-data">
-                <br>
+                
                     <div class="card-body">
                     <img src="assets\img\iconos\Psicofastlogoround.png">
-                    <br><br>
+                    <br>
                     <h1 style="color:rgb(120,120,171);" >Registrar usuario</h1><br>
                     <div class="mb-3">
                                 
