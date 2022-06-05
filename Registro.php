@@ -73,15 +73,6 @@
                             <br>
                             
                             <div class="mb-3">
-                            <select id="tipo" name="tipo" class="form-control col-6 offset-3" >
-                                <option value="" selected >Elija el tipo de usuario</option>
-                                <option value="1">Paciente</option>
-                                <option value="2">Psicologo</option>
-                                <option value="3">Secretaria</option>
-                            </select>
-                            </div>
-                            <br>
-                            <div class="mb-3">
                             <select id="estado "name="estado" class="form-control col-6 offset-3" >
                                 <option value="" selected >Elija el estado del usuario</option>
                                 <option value="1">Activo</option>
@@ -110,8 +101,18 @@
 </div>
 
 
+<?php
+        if(isset($_GET['error']))
+        {
+            ?>
+        <script>
+        swal("Este RUT ya se encuentra registrado");
+        
+        </script>
 
-
+        <?php
+        }
+        ?>
 
 </body>
 </html>

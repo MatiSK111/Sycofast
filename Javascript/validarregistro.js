@@ -14,7 +14,7 @@ function validarregistro()
      document.form1.rut.value = cuerpo + '-'+ dv
      
      // Si no cumple con el mínimo ej. (n.nnn.nnn)
-     if(cuerpo.length < 7) { alert("Debe Ingresar rut valido"); return false;}
+     if(cuerpo.length < 7) { alert("Debe ingresar un RUT valido"); return false;}
      
      // Calcular Dígito Verificador
      suma = 0;
@@ -34,15 +34,7 @@ function validarregistro()
    
      }
      
-     // Calcular Dígito Verificador en base al Módulo 11
-     dvEsperado = 11 - (suma % 11);
      
-     // Casos Especiales (0 y K)
-     dv = (dv == 'K')?10:dv;
-     dv = (dv == 0)?11:dv;
-     
-     // Validar que el Cuerpo coincide con su Dígito Verificador
-     if(dvEsperado != dv) {alert("Debe Ingresar rut valido"); return false; }
      
  
 
@@ -52,16 +44,7 @@ function validarregistro()
      document.form1.rut.focus();
      return false;
  }
- var m = document.form1.rut.value;
- var expreg = /^[A-Za-z0-9_-]{1,1000}$/;
  
- if(!expreg.test(m)){
-
-     alert("Debe ingresar RUT valido");
-     document.form1.rut.focus();
-     return false;
-   
- }
 
     if(document.form1.nombres.value=="")
     {
@@ -128,12 +111,7 @@ function validarregistro()
         document.form1.direccion.focus();
         return false;
     }
-    if(document.form1.tipo.value=="")
-    {
-        alert("Debe ingresar un tipo de usuario");
-        document.form1.tipo.focus();
-        return false;
-    }
+    
     if(document.form1.estado.value=="")
     {
         alert("Debe ingresar el estado del usuario");
