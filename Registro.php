@@ -87,7 +87,7 @@
                             <br>
                             <div class="mb-3">
                                 
-                                <input type="text" class="form-control col-6 offset-3" id="correo"name="correo" placeholder="Correo electronico">
+                                <input type="email" class="form-control col-6 offset-3" id="correo"name="correo" placeholder="Correo electronico">
                             </div>
                             <br>
                             <button type="button" class="btn btn-primary" id="btnregistrar" value="Registrar" onclick="validarregistro();">Registrar</button>

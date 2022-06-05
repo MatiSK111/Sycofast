@@ -124,6 +124,19 @@ function validarregistro()
         document.form1.telefono.focus();
         return false;
     }
+
+    var t = document.form1.telefono.value;
+    var expreg = /^[0-9]{8,9}$/;
+
+    if(!expreg.test(t)){
+
+        alert("Debe ingresar solo numeros en el telefono (9 digitos)");
+        document.form1.telefono.focus();
+        return false;
+      
+    }
+
+
     if(document.form1.correo.value=="")
     {
         alert("Debe ingresar un correo electronico");
@@ -133,15 +146,17 @@ function validarregistro()
 
 
     var m = document.form1.correo.value;
-    var expreg = /^[A-Za-z0-9_@.]{1,1000}$/;
     
-    if(!expreg.test(m)){
-
+    emailRegex = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i;
+   
+    if (!emailRegex.test(m)) {
+      
         alert("Debe Ingresar un correo valido");
         document.form1.frmmail.focus();
         return false;
-      
+    
     }
+      
 
     document.form1.submit();
 }
