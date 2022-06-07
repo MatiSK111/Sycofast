@@ -30,6 +30,10 @@
 <link type="text/css" href="./css/neumorphism.css" rel="stylesheet">
 
 </head>
+<?php
+session_start();
+
+?>
 <body>
 
 <br><br><br><br>
@@ -40,11 +44,11 @@
                     <br><br>
 
                       <div class="d-flex justify-content-around">
-                        <div class="p-2 "><button class="btn  btn-primary" type="button"><img src="assets\img\iconos\logout.png" height ="30" width="30" /></button></div>
+                        <div class="p-2 "><a href="cerrarsesion.php" class="btn  btn-primary" type="button"><img src="assets\img\iconos\logout.png" height ="30" width="30" /></a></div>
                         <div class="p-2"><h1 style="color:rgb(120,120,171);" >Menu Psicologo</h1></div>
                         <div class="p-2 ">
                           <button class="btn btn-icon-only btn-pill btn-primary" type="button" aria-label="up button" title="up button">
-                            <img src="assets\img\iconos\psico.jpg" height ="110" width="110" Style="border-radius:150px"/>
+                            <img src="assets\fotoperfil\<?php echo $_SESSION['foto']; ?>" height ="145" width="145" Style="border-radius:150px"/>
                          </button>
                        </div>
                      </div>

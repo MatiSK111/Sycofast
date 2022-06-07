@@ -156,6 +156,17 @@ function validarregistro()
         return false;
     
     }
+
+
+    if(document.form1.foto.value=="")
+    {
+        alert("Debe subir una foto");
+        document.form1.foto.focus();
+        return false;
+    }
+
+    
+
       
 
     document.form1.submit();

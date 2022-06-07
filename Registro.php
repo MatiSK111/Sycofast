@@ -90,6 +90,15 @@
                                 <input type="email" class="form-control col-6 offset-3" id="correo"name="correo" placeholder="Correo electronico">
                             </div>
                             <br>
+                           
+                                <div class="custom-file ">
+                                    <input type="file" class="custom-file-input" id="foto"name="foto" aria-label="Foto de perfil" >
+                                    <label class="custom-file-label" for="customFile">Foto de perfil</label>
+                                </div>
+                            
+                            <br>
+                            <br>
+                          
                             <button type="button" class="btn btn-primary" id="btnregistrar" value="Registrar" onclick="validarregistro();">Registrar</button>
                             <br><br>
                             

@@ -14,14 +14,15 @@ $datos=mysqli_fetch_array($result);
 
 if($cont!=0)
 {
-    $_SESSION['user']=$datos['nombres'];
-    $_SESSION['tipousu']=$datos['tipo'];
-    $_SESSION['id']=$datos['idusuario'];
+  $_SESSION['user']=$datos['nombres'];
+  $_SESSION['tipousu']=$datos['tipo'];
+  $_SESSION['id']=$datos['rut'];
+  $_SESSION['foto']=$datos['foto'];
    // ojito aqui que se puede agregar eso
   //  $sql2="UPDATE propietarios SET dispositivo='WEB' WHERE rut='".$_POST['frmrut']."'";
   // $result=mysqli_query(conexion(),$sql2);
     if($datos['tipo']=="paciente"){
-
+      
       header('Location:index.php');
     }
     if($datos['tipo']=="secretaria"){
