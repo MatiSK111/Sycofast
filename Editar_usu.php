@@ -53,7 +53,7 @@ tr:nth-child(even) {
     <td><input type="text" value="<?php echo $datos['Apellidos']?>" name=ape id="ape" required></td>
     <td><input type="text" value="<?php echo $datos['fechanac']?>" name=fech id="fech" required></td>
     <td><input type="text" value="<?php echo $datos['direccion']?>" name=direc id="direc" required></td>
-    <td><input type="text" value="<?php echo $datos['telefono']?>" name=tel id="tel" required></td>
+    <td><input type="text" value="<?php echo $datos['telefono']?>" name=tel id="tel" required minlength="9"></td>
     <td><input type="text" value="<?php echo $datos['mail']?>" name=mail id="mail" required></td>
     <td><input type="text" value="<?php echo $datos['estado']?>" name=estado id="estado" required></td>
 
