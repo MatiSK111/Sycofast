@@ -50,7 +50,13 @@ tr:nth-child(even) {
     <td><?php echo $datos['direccion']?></td>
     <td><?php echo $datos['telefono']?></td>
     <td><?php echo $datos['mail']?></td>
-    <td><?php echo $datos['estado']?></td>
+    <td><?php if ($datos['estado']==1){
+                echo "Activo";
+             }else{
+               echo "Inactivo";
+             }
+    
+    ?></td>
     <td><a href="Editar_usu.php?Rut=<?php echo $datos['rut']?>"class="btn btn-lg btn-primary3" type="button"><pre>Editar</a></td>
     <td><a href="Eliminar_usu.php?Rut=<?php echo $datos['rut']?>"class="btn btn-lg btn-primary3" type="button"><pre>Eliminar</a></td>
     

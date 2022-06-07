@@ -25,8 +25,11 @@ tr:nth-child(even) {
   background-color: #dddddd;
 }
 </style>
+<!--Validaciones-->
+<script src="Javascript/validar_actualizar.js"></script>
+
 </head>
-<form action="procesar_actualizar.php" method="POST">
+<form name="form1" action="procesar_actualizar.php" method="POST" enctype="multipart/form-data">
 <table>
 <tr>
     <th>Rut</th>
@@ -43,15 +46,15 @@ tr:nth-child(even) {
    while($datos=mysqli_fetch_array($result)){
    ?>
     <tr>
-    <input type="hidden" value="<?php echo $datos['rut']?>" name=rrut>
-    <td><input type="text" value="<?php echo $datos['rut']?>" name=Rut></td>
-    <td><input type="text" value="<?php echo $datos['nombre']?>" name=nom></td>
-    <td><input type="text" value="<?php echo $datos['Apellidos']?>" name=ape></td>
-    <td><input type="text" value="<?php echo $datos['fechanac']?>" name=fech></td>
-    <td><input type="text" value="<?php echo $datos['direccion']?>" name=direc></td>
-    <td><input type="text" value="<?php echo $datos['telefono']?>" name=tel></td>
-    <td><input type="text" value="<?php echo $datos['mail']?>" name=mail></td>
-    <td><input type="text" value="<?php echo $datos['estado']?>" name=estado></td>
+    <input type="hidden" value="<?php echo $datos['rut']?>" name=rrut id="rrut" >
+    <td><input type="text" value="<?php echo $datos['rut']?>" name=Rut id="Rut"></td>
+    <td><input type="text" value="<?php echo $datos['nombre']?>" name=nom id="nom"></td>
+    <td><input type="text" value="<?php echo $datos['Apellidos']?>" name=ape id="ape"></td>
+    <td><input type="text" value="<?php echo $datos['fechanac']?>" name=fech id="fech"></td>
+    <td><input type="text" value="<?php echo $datos['direccion']?>" name=direc id="direc"></td>
+    <td><input type="text" value="<?php echo $datos['telefono']?>" name=tel id="tel"></td>
+    <td><input type="text" value="<?php echo $datos['mail']?>" name=mail id="mail"></td>
+    <td><input type="text" value="<?php echo $datos['estado']?>" name=estado id="estado"></td>
 
   </tr>
   
