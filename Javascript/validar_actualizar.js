@@ -38,7 +38,7 @@ function validar_actualizar()
      
  
 
- if(document.form1.Rut.value=="")
+ if(document.Actualizar.Rut.value=="")
  {
      alert("Debe ingresar un RUT");
      document.form1.rut.focus();
