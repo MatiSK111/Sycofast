@@ -64,7 +64,7 @@ $result=mysqli_query(conexion(), $sql);
                           <tr>
                             <input type="hidden" value="<?php echo $datos['rut']?>" name=rrut id="rrut" >
                             <td><input type="text" value="<?php echo $datos['rut']?>" name=Rut id="Rut" required></td>
-                            <td><input type="text" value="<?php echo $datos['nombre']?>" name=nom id="nom" required></td>
+                            <td><input type="text" value="<?php echo $datos['nombres']?>" name=nom id="nom" required></td>
                             <td><input type="text" value="<?php echo $datos['Apellidos']?>" name=ape id="ape" required></td>
                             <td><input type="text" value="<?php echo $datos['fechanac']?>" name=fech id="fech" required></td>
                            
@@ -89,6 +89,7 @@ $result=mysqli_query(conexion(), $sql);
 </table>
 <center>
 <input type="submit" class="btn btn-primary" id="btnregistrar"  onclick="validar_actualizar();" value="Actualizar">
+<a href="Listar_usu.php" class="btn btn-primary">Volver</a>
 </center>
 </form>
   </div>

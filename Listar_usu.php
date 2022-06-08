@@ -81,6 +81,7 @@ $result=mysqli_query(conexion(), $sql);
                                     }
                             
                             ?></td>
+                            
                             <td><a href="Editar_usu.php?Rut=<?php echo $datos['rut']?>"class="btn btn-primary" type="button">Editar</a></td>
                             <td><a href="Eliminar_usu.php?Rut=<?php echo $datos['rut']?>"class="btn btn-primary" type="button">Eliminar</a></td>
     
