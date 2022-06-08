@@ -59,7 +59,7 @@ if($anterior>1){
                         <div class="p-2"><h1 style="color:rgb(120,120,171);" >Pregunta numero <?php echo $_GET['p'];?></h1></div>
                         <div class="p-2 ">
                          
-                          <h3 >  Pregunta <?php echo $_GET['p'];?> de x  </h3> 
+                          <h4 style="color:rgb(120,120,171);" >  Pregunta <?php echo $_GET['p'];?> de x  </h4> 
                           <div class="progress"  style="height: 20px; ">
                           <div class="progress-bar bg-info" role="progressbar" style="width: <?php echo $_GET['p'];?>0%"  aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
                         </div>
