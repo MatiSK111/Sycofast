@@ -61,7 +61,7 @@ if($anterior>1){
                          
                           <h3 >  Pregunta <?php echo $_GET['p'];?> de x  </h3> 
                           <div class="progress"  style="height: 20px; ">
-                          <div class="progress-bar bg-info" role="progressbar" style="width: 80%"  aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+                          <div class="progress-bar bg-info" role="progressbar" style="width: <?php echo $_GET['p'];?>0%"  aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
                         </div>
                        </div>
                      </div>
