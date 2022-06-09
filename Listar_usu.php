@@ -51,6 +51,7 @@ $result=mysqli_query(conexion(), $sql);
                 <div class="mb-5">
                     <table class="table shadow-soft rounded">
                         <tr>
+                            <th class="border-0" scope="col">Tipo</th>
                             <th class="border-0" scope="col">Rut</th>
                             <th class="border-0" scope="col">Nombre</th>
                             <th class="border-0" scope="col">Apellidos</th>
@@ -63,10 +64,14 @@ $result=mysqli_query(conexion(), $sql);
                         
    <?php
    while($datos=mysqli_fetch_array($result)){
+       if($datos['tipo']=="Paciente"){
+
+       
    ?>
     
 
 <tr>
+                            <td><?php echo $datos['tipo']?></td>
                             <td><?php echo $datos['rut']?></td>
                             <td><?php echo $datos['nombres']?></td>
                             <td><?php echo $datos['Apellidos']?></td>
@@ -87,6 +92,7 @@ $result=mysqli_query(conexion(), $sql);
     
                         </tr>
    <?php
+       }
    } ?>
 </table>
 </center>
