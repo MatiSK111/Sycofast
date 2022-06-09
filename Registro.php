@@ -36,68 +36,75 @@
                     <img src="assets\img\iconos\Psicofastlogoround.png">
                     <br>
                     <h1 style="color:rgb(120,120,171);" >Registrar usuario</h1><br>
-                    <div class="mb-3">
+                    <div class="row ">
+                    <div class="mb-3 col-6">
                                 
-                                <input type="text" class="form-control col-6 offset-3" id="rut"name="rut" placeholder="RUT">
+                                <input type="text" class="form-control " id="rut"name="rut" placeholder="RUT">
                             </div>
                             <br>
-                            <div class="mb-3">
+                            <div class="mb-3 col-6">
                                 
-                                <input type="text" class="form-control col-6 offset-3" id="nombres"name="nombres" placeholder="Nombres">
+                                <input type="text" class="form-control" id="user"name="user" placeholder="Usuario">
                             </div>
+                            
+                    </div>
                             <br>
-                            <div class="mb-3">
+                            <div class="row">
+                            <div class="mb-3 col-6">
+                                <input type="text" class="form-control  " id="nombres"name="nombres" placeholder="Nombres">
+                            </div>
+                            <div class="mb-3 col-6">
                                 
-                                <input type="text" class="form-control col-6 offset-3" id="apellidos"name="apellidos" placeholder="Apellidos">
-                            </div>
-                            <br>
-                            <div class="mb-3">
-                                
-                                <input type="text" class="form-control col-6 offset-3" id="user"name="user" placeholder="Usuario">
-                            </div>
-                            <br>
-                            <div class="mb-3">
-                                
-                                <input type="password" class="form-control col-6 offset-3" id="pass"name="pass" placeholder="Contraseña">
-                            </div>
-                            <br>
-                            <div class="mb-3">
-                               
-                                <input type="date" class="form-control col-6 offset-3" id="fechanac"name="fechanac" placeholder="Fecha de nacimientos">
-                            </div>
-                            <br>
-                            <div class="mb-3">
-                                
-                                <input type="text" class="form-control col-6 offset-3" id="direccion"name="direccion" placeholder="Dirección">
+                                <input type="text" class="form-control" id="apellidos"name="apellidos" placeholder="Apellidos">
                             </div>
                             <br>
                             
-                            <div class="mb-3">
-                            <select id="estado "name="estado" class="form-control col-6 offset-3" >
+                    </div>
+                            <br>
+                            <div class="row">
+                            <div class="mb-3 col-6">
+                                
+                                <input type="password" class="form-control " id="pass"name="pass" placeholder="Contraseña">
+                            </div>
+                            <br>
+                            <div class="mb-3 col-6">
+                               
+                                <input type="date" class="form-control " id="fechanac"name="fechanac" placeholder="Fecha de nacimiento">
+                            </div>
+</div>
+                            <br>
+                            <div class="row">
+                            <div class="mb-3 col-6">
+                                
+                                <input type="text" class="form-control " id="direccion"name="direccion" placeholder="Dirección">
+                            </div>
+                            <br>
+                            
+                            <div class="mb-3 col-6">
+                            <select id="estado "name="estado" class="form-control" >
                                 <option value="" selected >Elija el estado del usuario</option>
                                 <option value="1">Activo</option>
                                 <option value="0">Inactivo</option>
                             </select>
                             </div>
+</div>
                             <br>
-                            <div class="mb-3">
+                            <div class="row">
+                            <div class="mb-3 col-6">
                                 
-                                <input type="text" class="form-control col-6 offset-3" id="telefono"name="telefono" placeholder="Teléfono">
+                                <input type="text" class="form-control " id="telefono"name="telefono" placeholder="Teléfono">
                             </div>
                             <br>
-                            <div class="mb-3">
+                            <div class="mb-3 col-6">
                                 
-                                <input type="email" class="form-control col-6 offset-3" id="correo"name="correo" placeholder="Correo electronico">
+                                <input type="email" class="form-control " id="correo"name="correo" placeholder="Correo electronico">
+                            </div>
                             </div>
                             <br>
+
                            
-                                <div class="custom-file ">
-                                    <input type="file" class="custom-file-input" id="foto"name="foto" aria-label="Foto de perfil" >
-                                    <label class="custom-file-label" for="customFile">Foto de perfil</label>
-                                </div>
-                            
-                            <br>
-                            <br>
+                             
+                        
                           
                             <button type="button" class="btn btn-primary" id="btnregistrar" value="Registrar" onclick="validarregistro();">Registrar</button>
                             <br><br>
