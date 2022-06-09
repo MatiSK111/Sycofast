@@ -35,14 +35,61 @@
 include("functions/setup.php");
 session_start();
 
+
+
+$sql="SELECT * FROM pregunta WHERE Test_idtest=".$_GET['t'];
+$result=mysqli_query(conexion(), $sql);
+$cont=mysqli_num_rows($result);
+$datos=mysqli_fetch_array($result);
+
+
+$final=false;
 $siguiente=$_GET['p'];
 $anterior=$_GET['p'];
-$siguiente=$siguiente+1;
+
 if($anterior>1){
   $anterior=$anterior-1;
 }
-//$sql="SELECT * FROM usuario WHERE rut='$rut'";
-//$result=mysqli_query(conexion(), $sql);
+if($siguiente>=$cont){
+
+  $siguiente=$siguiente;
+  $final=true;
+}else{
+
+  $siguiente=$siguiente+1;
+}
+
+$aumento = ($_GET['p']*100)/$cont;
+
+
+// aca podemos obtener todos los datos de la pregunta actual
+$sql2="SELECT * FROM pregunta WHERE Test_idtest = ".$_GET['t']." and numeropregunta= ".$_GET['p'];
+$result2=mysqli_query(conexion(), $sql2);
+$datos2=mysqli_fetch_array($result2);
+
+//obtenemos la cantida de alternativas
+$sql3="SELECT * FROM alternativa WHERE Pregunta_idtable1  = ".$datos2['idpregunta'];
+//echo $sql3;
+//die;
+$result3=mysqli_query(conexion(), $sql3);
+$cont3=mysqli_num_rows($result3);
+
+
+
+//llenamos el arreglo con las descripciones de las alternativas
+$i=1;
+while($i<=$cont3){
+  $sql4="SELECT * FROM alternativa WHERE Pregunta_idtable1  = ".$datos2['idpregunta']." and numeroalternativa =".$i ;
+  $result4=mysqli_query(conexion(), $sql4);
+  $dato4=mysqli_fetch_array($result4);
+
+  $alt[] = $dato4['descripcionalternativa'];
+
+$i=$i+1;
+}
+
+
+
 ?>
 
 <body>
@@ -52,16 +99,16 @@ if($anterior>1){
 <div class="col-8 offset-2" style="padding-bottom:500px">
                 <div class="card bg-primary shadow-soft text-center border-light">
                     <div class="card-body">
-                    <h5 style="color:rgb(120,120,171);" >Id Test <?php echo $_GET['t'];?></h5>
+                    <h5 style="color:rgb(120,120,171);" >Id Test <?php echo $_GET['t'];   echo $cont;?></h5>
 
                       <div class="d-flex justify-content-around">
                         <div class="p-2 "><a href="index.php" class="btn  btn-primary" type="button"><img src="assets\img\iconos\salir.png" height ="30" width="30" /></a></div>
                         <div class="p-2"><h1 style="color:rgb(120,120,171);" >Pregunta numero <?php echo $_GET['p'];?></h1></div>
                         <div class="p-2 ">
                          
-                          <h4 style="color:rgb(120,120,171);" >  Pregunta <?php echo $_GET['p'];?> de x  </h4> 
+                          <h4 style="color:rgb(120,120,171);" >  Pregunta <?php echo $_GET['p'];?> de <?php echo $cont;?>  </h4> 
                           <div class="progress"  style="height: 20px; ">
-                          <div class="progress-bar bg-info" role="progressbar" style="width: <?php echo $_GET['p'];?>0%"  aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+                          <div class="progress-bar bg-info" role="progressbar" style="width: <?php echo $aumento?>%"  aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
                         </div>
                        </div>
                      </div>
@@ -76,9 +123,8 @@ if($anterior>1){
                               <div class="tab-content" id="tabcontent1">
 
                                   <div class="tab-pane fade show active" id="tabs-text-1" role="tabpanel" aria-labelledby="tabs-text-1-tab">
-                                      <p>Exercitation photo booth stumptown tote bag Banksy, elit small batch freegan sed. Craft beer elit seitan exercitation, photo booth et 8-bit kale chips proident chillwave deep v laborum. Aliquip veniam delectus,
-                                          Marfa eiusmod Pinterest in do umami readymade swag.</p>
-                                      <p>Day handsome addition horrible sensible goodness two contempt. Evening for married his account removal. Estimable me disposing of be moonlight cordially curiosity.</p>
+                                    
+                                      <p>  <?php echo $datos2['Descripcionpregunta']; ?> </p>
                                   </div>
                                 </div>
                                 </div>
@@ -95,7 +141,7 @@ if($anterior>1){
                                 <div class="form-check">
                                   <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
                                   <label class="form-check-label" for="exampleRadios1">
-                                    Default radio Default radioDefault radioDefault radio radioDefault radioDefault 
+                                  <?php echo $alt[0]; ?>
                                   </label>
                                 </div>
 
@@ -105,7 +151,7 @@ if($anterior>1){
                                 <div class="form-check">
                                   <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
                                   <label class="form-check-label" for="exampleRadios2">
-                                    Second default radio  Second default radio Second default radio Second default 
+                                  <?php echo $alt[1]; ?>
                                   </label>
                                 </div>
 
@@ -116,7 +162,7 @@ if($anterior>1){
                                <div class="form-check">
                                   <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3" value="option3">
                                   <label class="form-check-label" for="exampleRadios3">
-                                    tercer default radio  tercer default radio tercer default radio tercer default 
+                                  <?php echo $alt[2]; ?> 
                                   </label>
                                 </div>
 
@@ -127,7 +173,7 @@ if($anterior>1){
                                   <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios4" value="option4">
                                   <label class="form-check-label" for="exampleRadios4">
                                     
-                                  cuarto default radio cuarto default radiocuarto default radiocuarto default radio
+                                  <?php echo $alt[3]; ?>
                                   </label>
                                 </div>
 
@@ -142,6 +188,16 @@ if($anterior>1){
                         <div class="row align-items-end">
                             <div class="col">
                             <div class="p-2 "><a href="Test.php?t=<?php echo $_GET['t'];?>&p=<?php echo $anterior;?>" class="btn  btn-primary" type="button"><img src="assets\img\iconos\anterior.png" height ="50" width="55" /></a></div>
+                            </div>
+                            <div class="col">
+                            <?php if($final){
+                              ?>
+                           
+                          
+                            <div class="p-2 "><a href="procesaTest.php?t=<?php echo $_GET['t'];?>&p=<?php echo $anterior;?>" class="btn  btn-primary" type="button"><img src="assets\img\iconos\check.png" height ="43" width="40" /></a></div>
+                            
+                            
+                            <?php } ?>
                             </div>
                             <div class="col">
                             <div class="p-2 "><a href="Test.php?t=<?php echo $_GET['t'];?>&p=<?php echo $siguiente;?>" class="btn  btn-primary" type="button"><img src="assets\img\iconos\siguiente.png" height ="50" width="55" /></a></div>
