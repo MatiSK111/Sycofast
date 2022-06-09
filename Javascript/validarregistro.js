@@ -158,14 +158,6 @@ function validarregistro()
     }
 
 
-    if(document.form1.foto.value=="")
-    {
-        alert("Debe subir una foto");
-        document.form1.foto.focus();
-        return false;
-    }
-
-    
 
       
 
