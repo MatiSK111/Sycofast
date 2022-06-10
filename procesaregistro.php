@@ -30,7 +30,7 @@ include("functions/setup.php");
 $rut = $_POST["rut"];
 $email = $_POST["correo"];
 $user = $_POST["user"];
-$pass = $_POST["pass"];
+$pass = md5($_POST['pass']);
 $nombre = $_POST["nombres"];
 $ape=$_POST["apellidos"];
 $fch=$_POST["fechanac"];
@@ -40,7 +40,7 @@ $tel=$_POST["telefono"];
 
 
 
-$sql = "INSERT INTO usuario (rut, usuario, clave, mail, nombres, Apellidos, fechanac, direccion, estado, telefono) VALUES ('$rut','$user', '$pass', '$email', '$nombre','$ape','$fch', '$direc', '$stado', '$tel')";
+$sql = "INSERT INTO usuario (rut, usuario, clave, mail, nombres, Apellidos, fechanac, direccion, estado, telefono,tipo,foto) VALUES ('$rut','$user', '$pass', '$email', '$nombre','$ape','$fch', '$direc', '$stado', '$tel','Paciente','perfil.jpeg')";
 
 if (mysqli_query(conexion(), $sql)) {
     header("Location: index.php");
