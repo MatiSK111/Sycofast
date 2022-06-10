@@ -130,5 +130,19 @@
         }
         ?>
 
+
+<?php
+        if(isset($_GET['correcto']))
+        {
+            ?>
+        <script>
+        swal("Registrado!", "Usuario Registrado", "success");
+        
+        </script>
+
+        <?php
+        }
+        ?>
+
 </body>
 </html>
