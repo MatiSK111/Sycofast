@@ -68,7 +68,7 @@ $result2=mysqli_query(conexion(), $sql2);
 $datos2=mysqli_fetch_array($result2);
 
 //obtenemos la cantida de alternativas
-$sql3="SELECT * FROM alternativa WHERE Pregunta_idtable1  = ".$datos2['idpregunta'];
+$sql3="SELECT * FROM alternativa WHERE Pregunta_idpregunta   = ".$datos2['idpregunta'];
 //echo $sql3;
 //die;
 $result3=mysqli_query(conexion(), $sql3);
@@ -79,7 +79,7 @@ $cont3=mysqli_num_rows($result3);
 //llenamos el arreglo con las descripciones de las alternativas
 $i=1;
 while($i<=$cont3){
-  $sql4="SELECT * FROM alternativa WHERE Pregunta_idtable1  = ".$datos2['idpregunta']." and numeroalternativa =".$i ;
+  $sql4="SELECT * FROM alternativa WHERE Pregunta_idpregunta   = ".$datos2['idpregunta']." and numeroalternativa =".$i ;
   $result4=mysqli_query(conexion(), $sql4);
   $dato4=mysqli_fetch_array($result4);
 
@@ -99,7 +99,7 @@ $i=$i+1;
 <div class="col-8 offset-2" style="padding-bottom:500px">
                 <div class="card bg-primary shadow-soft text-center border-light">
                     <div class="card-body">
-                    <h5 style="color:rgb(120,120,171);" >Id Test <?php echo $_GET['t'];   echo $cont;?></h5>
+                    <h5 style="color:rgb(120,120,171);" >Id Test <?php echo $_GET['t']; ?></h5>
 
                       <div class="d-flex justify-content-around">
                         <div class="p-2 "><a href="index.php" class="btn  btn-primary" type="button"><img src="assets\img\iconos\salir.png" height ="30" width="30" /></a></div>
@@ -125,6 +125,8 @@ $i=$i+1;
                                   <div class="tab-pane fade show active" id="tabs-text-1" role="tabpanel" aria-labelledby="tabs-text-1-tab">
                                     
                                       <p>  <?php echo $datos2['Descripcionpregunta']; ?> </p>
+                                      
+                                      <img src="assets\img\imagenespregunta\<?php echo $datos2['imagen'];?>" height ="300" width="400" />
                                   </div>
                                 </div>
                                 </div>
