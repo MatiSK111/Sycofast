@@ -33,6 +33,11 @@ if($cont!=0)
 
       header('Location:MenuPsicologo.php');
     }
+    if($datos['tipo']=="admin"){
+
+      header('Location:MenuAdmin.php');
+    }
+    
 
    
 }else{

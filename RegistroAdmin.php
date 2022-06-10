@@ -74,6 +74,7 @@
                                         <option value="paciente">Paciente</option>
                                         <option value="psicologo">Psicologo</option>
                                         <option value="secretaria">Secretaria</option>
+                                        <option value="admin">Admin</option>
                                     </select>                               
                                 </div>
                                 <br>                           

@@ -35,7 +35,7 @@
                     <div class="card-body">
                     <img src="assets\img\iconos\Psicofastlogoround.png">
                     <br>
-                    <h1 style="color:rgb(120,120,171);" >Registrar usuario</h1><br>
+                    <h1 style="color:rgb(120,120,171);" >Registrar Paciente</h1><br>
                     <div class="row ">
                     <div class="mb-3 col-6">
                                 
