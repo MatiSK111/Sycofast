@@ -63,10 +63,11 @@ $result=mysqli_query(conexion(), $sql);
    ?>
                           <tr>
                             <input type="hidden" value="<?php echo $datos['rut']?>" name=rrut id="rrut" >
-                            <td><input type="text" value="<?php echo $datos['rut']?>" name=Rut id="Rut" required></td>
-                            <td><input type="text" value="<?php echo $datos['nombres']?>" name=nom id="nom" required></td>
-                            <td><input type="text" value="<?php echo $datos['Apellidos']?>" name=ape id="ape" required></td>
-                            <td><input type="text" value="<?php echo $datos['fechanac']?>" name=fech id="fech" required></td>
+                            <td><input class="form-control "type="text" value="<?php echo $datos['rut']?>" name=Rut id="Rut" required></td>
+                            <td><input class="form-control "type="text" value="<?php echo $datos['nombres']?>" name=nom id="nom" required></td>
+                            <td><input class="form-control "type="text" value="<?php echo $datos['Apellidos']?>" name=ape id="ape" required></td>
+                            <td><input class="form-control "type="text" value="<?php echo $datos['fechanac']?>" name=fech id="fech" required></td>
+                            
                            
                         </tr>
                         <tr>
@@ -75,23 +76,33 @@ $result=mysqli_query(conexion(), $sql);
                             <th class="border-0" scope="col">Telefono</th>
                             <th class="border-0" scope="col">Email</th>
                             <th class="border-0" scope="col">Estado</th>
+
                         </tr>
                         <tr>
                             
-                            <td><input type="text" value="<?php echo $datos['direccion']?>" name=direc id="direc" required></td>
-                            <td><input type="text" value="<?php echo $datos['telefono']?>" name=tel id="tel" required minlength="9"></td>
-                            <td><input type="text" value="<?php echo $datos['mail']?>" name=mail id="mail" required></td>
-                            <td><input type="text" value="<?php echo $datos['estado']?>" name=estado id="estado" required></td>
+                            <td><input class="form-control "type="text" value="<?php echo $datos['direccion']?>" name=direc id="direc" required></td>
+                            <td><input class="form-control " type="text" value="<?php echo $datos['telefono']?>" name=tel id="tel" required minlength="9"></td>
+                            <td><input class="form-control "type="text" value="<?php echo $datos['mail']?>" name=mail id="mail" required></td>
+                            <td><input class="form-control "type="text" value="<?php echo $datos['estado']?>" name=estado id="estado" required></td>
+                            <br>
                         </tr>
+                        
   
    <?php
    } ?>
+   
 </table>
 <center>
+<br>
 <input type="submit" class="btn btn-primary" id="btnregistrar"  onclick="validar_actualizar();" value="Actualizar">
 <a href="Listar_usu.php" class="btn btn-primary">Volver</a>
 </center>
-</form>
+</div>
   </div>
+  </div>
+  </div>
+  </div>
+</form>
+  
 </body>
 </html >
