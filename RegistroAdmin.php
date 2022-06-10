@@ -71,10 +71,10 @@
                                 <div class="mb-3 col-6">
                                     <select id="tipo "name="tipo" class="form-control" >
                                         <option value="" selected >Elija el tipo usuario</option>
-                                        <option value="paciente">Paciente</option>
-                                        <option value="psicologo">Psicologo</option>
-                                        <option value="secretaria">Secretaria</option>
-                                        <option value="admin">Admin</option>
+                                        <option value="Paciente">Paciente</option>
+                                        <option value="Psicologo">Psicologo</option>
+                                        <option value="Secretaria">Secretaria</option>
+                                        <option value="Admin">Admin</option>
                                     </select>                               
                                 </div>
                                 <br>                           

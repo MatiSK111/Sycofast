@@ -21,15 +21,15 @@ if($cont!=0)
    // ojito aqui que se puede agregar eso
   //  $sql2="UPDATE propietarios SET dispositivo='WEB' WHERE rut='".$_POST['frmrut']."'";
   // $result=mysqli_query(conexion(),$sql2);
-    if($datos['tipo']=="paciente"){
+    if($datos['tipo']=="Paciente"){
       
       header('Location:index.php');
     }
-    if($datos['tipo']=="secretaria"){
+    if($datos['tipo']=="Secretaria"){
 
       header('Location:MenuSecretaria.php');
     }
-    if($datos['tipo']=="psicologo"){
+    if($datos['tipo']=="Psicologo"){
 
       header('Location:MenuPsicologo.php');
     }
