@@ -3,34 +3,30 @@
 include("functions/setup.php");
 
 
+$rut = $_POST["rut"];
+$email = $_POST["correo"];
+$user = $_POST["user"];
+$pass = md5($_POST['pass']);
+$nombre = $_POST["nombres"];
+$ape=$_POST["apellidos"];
+$fch=$_POST["fechanac"];
+$direc=$_POST["direccion"];
+$stado=$_POST["estado"];
+$tel=$_POST["telefono"];
+$tip=$_POST["tipo"];
 
-//$sql="insert into propietarios ='".$_POST['frmusuario']."' and clave='".md5($_POST['frmclave'])."' and estado=1";
-//echo $sql;
-//die; cieere de ejecución hace un stop
-$sql="insert into usuario values('".$_POST['rut']."','".$_POST['nombres']."','".$_POST['apellidos']."','".$_POST['user']."','".$_POST['fechanac']."','null','".md5($_POST['pass'])."','".$_POST['tipo']."','".$_POST['estado']."','".$_POST['telefono']."','".$_POST['correo']."')";
 
 
+$sql = "INSERT INTO usuario (rut, usuario, clave, mail, nombres, Apellidos, fechanac, direccion, estado, telefono,tipo,foto) VALUES ('$rut','$user', '$pass', '$email', '$nombre','$ape','$fch', '$direc', '$stado', '$tel','$tip','perfil.jpeg')";
 
-
-$sql2="select * from usuario where rut='".$_POST['rut']."' ";
-
-
-
-$result=mysqli_query(conexion(),$sql2);
-$cont=mysqli_num_rows($result);
-
-if($cont!=0)
-{
-   header('Location:RegistroAdmin.php?error');
-   
-}else{
-    
-    $result=mysqli_query(conexion(),$sql);
-    
-    header('Location:MenuAdmin.php');
-    
+if (mysqli_query(conexion(), $sql)) {
+    header("Location: index.php");
+} else {
+      echo "Error: " . $sql . "<br>" . mysqli_error(conexion());
 }
-
-
+mysqli_close(conexion());
 
 ?>
+
+
+
