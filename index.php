@@ -53,12 +53,12 @@ session_start();
                          </button>
                        </div>
                      </div>
-                     
+                    
                      <br><br><br><br><br>
                       <div class="container">
                         <div class="row align-items-end">
                             <div class="col">
-                            <a href="Test.php?t=1&p=1"class="btn btn-lg btn-primary" type="button"><pre>    <h3 >   Realizar Test   </h3>    </pre><img src="assets\img\iconos\test.png" height ="50" width="50" /></a>
+                            <a href="procesainiciotest.php?t=1&r=<?php echo $_SESSION['id']; ?>"class="btn btn-lg btn-primary" type="button"><pre>    <h3 >   Realizar Test   </h3>    </pre><img src="assets\img\iconos\test.png" height ="50" width="50" /></a>
                             </div>
                             <div class="col">
                             <button class="btn btn-lg btn-primary2" type="button"><pre>    <h3 >   Ver mis Test   </h3>    </pre><img src="assets\img\iconos\lista.png" height ="50" width="50" /></button>
