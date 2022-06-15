@@ -42,8 +42,11 @@ $tel=$_POST["telefono"];
 
 $sql = "INSERT INTO usuario (rut, usuario, clave, mail, nombres, Apellidos, fechanac, direccion, estado, telefono,tipo,foto) VALUES ('$rut','$user', '$pass', '$email', '$nombre','$ape','$fch', '$direc', '$stado', '$tel','Paciente','perfil.jpeg')";
 
+
+
+
 if (mysqli_query(conexion(), $sql)) {
-    header("Location: index.php");
+    header("Location: Registro.php?correcto");
 } else {
       echo "Error: " . $sql . "<br>" . mysqli_error(conexion());
 }
