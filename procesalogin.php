@@ -23,7 +23,7 @@ if($cont!=0)
   // $result=mysqli_query(conexion(),$sql2);
     if($datos['tipo']=="Paciente"){
       
-      header('Location:index.php');
+      header('Location:Menupaciente.php');
     }
     if($datos['tipo']=="Secretaria"){
 

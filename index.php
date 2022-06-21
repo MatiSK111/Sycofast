@@ -8,72 +8,81 @@
 <meta name="title" content="Psicofast">
 <meta name="author" content="Themesberg">
 
-<link rel="canonical" href="https://themesberg.com/product/ui-kits/neumorphism-ui/" />
-
-<!--  Social tags -->
-<meta name="keywords" content="neumorphism, neumorphism ui, neomorphism, neomorphism ui, neomorphism css, neumorphism css, neumorph, neumorphic, design system, login, form, table, tables, card, cards, navbar, modal, icons, icons, map, chat, carousel, menu, datepicker, gallery, slider, date, social, dropdown, search, tab, nav, footer, date picker, forms, tabs, time, button, select, input, timeline, cart, about us, account, log in, blog, profile, portfolio, landing page, ecommerce, shop, landing, register, app, contact, one page, sign up, signup, store, bootstrap 4, bootstrap4, dashboard, bootstrap 4 dashboard, bootstrap 4 design, bootstrap 4 system, bootstrap 4, bootstrap 4 uit kit, bootstrap 4 kit, themesberg, html kit, html css template, web template, bootstrap, bootstrap 4, css3 template, frontend, responsive bootstrap template, bootstrap ui kit, responsive ui kit">
-<meta name="description" content="Start developing neumorphic web applications and pages using Neumorphism UI. It features over 100 individual components and 5 example pages.">
-
-
-<!-- Favicon -->
-
-<link rel="icon" type="image/png" sizes="16x16" href="./assets/img/favicon/Psicofastlogoround.png">
-<link rel="manifest" href="./assets/img/favicon/site.webmanifest">
-
-<meta name="msapplication-TileColor" content="#ffffff">
-<meta name="theme-color" content="#ffffff">
-
-<!-- Fontawesome -->
-<link type="text/css" href="./vendor/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
 <!-- Pixel CSS -->
+<link rel="icon" type="image/png" sizes="16x16" href="./assets/img/favicon/Psicofastlogoround.png">
+
+
 <link type="text/css" href="./css/neumorphism.css" rel="stylesheet">
-
+<!-- Validaciones -->
+<script src="javascript/validarformusuario.js"></script>
+<!-- Alertas facheritas -->
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 </head>
-<?php
-session_start();
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+<body id="body" >
+<br><br>
+<br><br><br><br><br>
 
-?>
-
-<body>
-
-<br><br><br><br>
-
-<div class="col-8 offset-2" style="padding-bottom:500px">
-                <div class="card bg-primary shadow-soft text-center border-light">
+<div class="col-6 offset-3 " style="padding-bottom: 500px" >
+                <div class="card shadow-soft text-center border-light" id="card">
+                <form name="login" action="procesalogin.php" method="post" >
+                <br>
                     <div class="card-body">
+                    <img src="assets\img\iconos\Psicofastlogoround.png">
                     <br><br>
-
-                      <div class="d-flex justify-content-around">
-                        <div class="p-2 "><a href="cerrarsesion.php" class="btn  btn-primary" type="button"><img src="assets\img\iconos\logout.png" height ="30" width="30" /></a></div>
-                        <div class="p-2"><h1 style="color:rgb(120,120,171);" >Menu Principal</h1></div>
-                        <div class="p-2 ">
-                          <button class="btn btn-icon-only btn-pill btn-primary" type="button" aria-label="up button" title="up button">
-                            <img src="assets\fotoperfil\<?php echo $_SESSION['foto']; ?>" height ="145" width="145" Style="border-radius:150px"/>
-                         </button>
-                       </div>
-                     </div>
-                    
-                     <br><br><br><br><br>
-                      <div class="container">
-                        <div class="row align-items-end">
-                            <div class="col">
-                            <a href="procesainiciotest.php?t=1&r=<?php echo $_SESSION['id']; ?>"class="btn btn-lg btn-primary" type="button"><pre>    <h3 >   Realizar Test   </h3>    </pre><img src="assets\img\iconos\test.png" height ="50" width="50" /></a>
+                    <h1 style="color:rgb(120,120,171);" >Iniciar sesion</h1><br>
+                        
+                            <div class="mb-3">
+                                
+                                <input type="text" class="form-control col-6 offset-3" id="user"name="user" placeholder="Usuario">
                             </div>
-                            <div class="col">
-                            <button class="btn btn-lg btn-primary2" type="button"><pre>    <h3 >   Ver mis Test   </h3>    </pre><img src="assets\img\iconos\lista.png" height ="50" width="50" /></button>
+                            <br>
+                            <div class="mb-3">
+                               
+                                <input type="password" class="form-control col-6 offset-3" id="pass"name="pass" placeholder="Contraseña">
                             </div>
-                            <div class="col">
-                            <a href="resultados.php"class="btn btn-lg btn-primary3" type="button"><pre>    <h3 Style="Color:#FFF">   Mis Estadisticas   </h3>    </pre><img src="assets\img\iconos\stats.png" height ="50" width="50" /></a>
-                            </div>
-                          </div>
-                      </div> 
-                      <br><br><br><br>
-
-
+                            <br>
+                            <button type="button" class="btn btn-primary" id="btnregistrar" value="Ingresar" onclick="validarlogin();">Ingresar</button>
+                            <br><br>
+                            <a href="Recuperar.php">Olvidaste tu clave? Recuperar</a>
+                        
+                        <br><br>
                     </div>
-                  </div>
-            </div>
+                    </form>
+                </div>
+</div>
+
+<?php
+        if(isset($_GET['error']))
+        {
+            ?>
+        <script>
+        swal("Error!", "No se encuentra registrado", "error");
+        document.login.user.focus();
+        </script>
+
+        <?php
+        }
+        ?>
+
+<?php
+        if(isset($_GET['recuperado']))
+        {
+            ?>
+        <script>
+        swal("Enviado!", "Nueva clave enviada a su correo", "success");
+        
+        </script>
+
+        <?php
+        }
+        ?>
+
+
 
 
 </body>

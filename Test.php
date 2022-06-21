@@ -28,7 +28,8 @@
 
 <!-- Pixel CSS -->
 <link type="text/css" href="./css/neumorphism.css" rel="stylesheet">
-
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="sweetalert2.all.min.js"></script>
 </head>
 
 <?php
@@ -95,124 +96,155 @@ $i=$i+1;
 <body>
 
 <br><br><br>
+ <form name="test" action="procesaTest.php?t=<?php echo $_GET['t'];?>" method="post" > 
 
-<div class="col-8 offset-2" style="padding-bottom:500px">
-                <div class="card bg-primary shadow-soft text-center border-light">
-                    <div class="card-body">
-                    <h5 style="color:rgb(120,120,171);" >Id Test <?php echo $_GET['t']; ?></h5>
+  <div class="col-8 offset-2" style="padding-bottom:500px">
+    <div class="card bg-primary shadow-soft text-center border-light">
+       <div class="card-body">
+              <h5 style="color:rgb(120,120,171);" >Id Test <?php echo $_GET['t']; ?></h5>
 
-                      <div class="d-flex justify-content-around">
-                        <div class="p-2 "><a href="index.php" class="btn  btn-primary" type="button"><img src="assets\img\iconos\salir.png" height ="30" width="30" /></a></div>
-                        <div class="p-2"><h1 style="color:rgb(120,120,171);" >Pregunta numero <?php echo $_GET['p'];?></h1></div>
-                        <div class="p-2 ">
-                         
-                          <h4 style="color:rgb(120,120,171);" >  Pregunta <?php echo $_GET['p'];?> de <?php echo $cont;?>  </h4> 
-                          <div class="progress"  style="height: 20px; ">
-                          <div class="progress-bar bg-info" role="progressbar" style="width: <?php echo $aumento?>%"  aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+          <div class="d-flex justify-content-around">
+                          <div class="p-2 "><button class="btn  btn-primary" type="button"><img src="assets\img\iconos\salir.png" height ="30" width="30" onClick="salir();"/></button></div>
+                          <div class="p-2"><h1 style="color:rgb(120,120,171);" >Pregunta numero <?php echo $_GET['p'];?></h1></div>
+                          <div class="p-2 ">
+                          
+                            <h4 style="color:rgb(120,120,171);" >  Pregunta <?php echo $_GET['p'];?> de <?php echo $cont;?>  </h4> 
+                            <div class="progress"  style="height: 20px; ">
+                            <div class="progress-bar bg-info" role="progressbar" style="width: <?php echo $aumento?>%"  aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+                          </div>
                         </div>
-                       </div>
-                     </div>
-                     
-                     <br>
-                      <div class="container">
-                        <div class="row align-items-end">
-                            <div class="col-8 offset-2">
+                      </div>
+                      
+                      <br>
+                        <div class="container">
+                          <div class="row align-items-end">
+                              <div class="col-8 offset-2">
 
-                            <div class="card shadow-inset bg-primary border-light p-4 rounded">
-                            <div class="card-body p-0">
-                              <div class="tab-content" id="tabcontent1">
+                              <div class="card shadow-inset bg-primary border-light p-4 rounded">
+                              <div class="card-body p-0">
+                                <div class="tab-content" id="tabcontent1">
 
-                                  <div class="tab-pane fade show active" id="tabs-text-1" role="tabpanel" aria-labelledby="tabs-text-1-tab">
-                                    
-                                      <p>  <?php echo $datos2['Descripcionpregunta']; ?> </p>
+                                    <div class="tab-pane fade show active" id="tabs-text-1" role="tabpanel" aria-labelledby="tabs-text-1-tab">
                                       
-                                      <img src="assets\img\imagenespregunta\<?php echo $datos2['imagen'];?>" height ="300" width="400" />
+                                        <p>  <?php echo $datos2['Descripcionpregunta']; ?> </p>
+                                        
+                                        <img src="assets\img\imagenespregunta\<?php echo $datos2['imagen'];?>" height ="300" width="400" />
+                                    </div>
+                                  </div>
                                   </div>
                                 </div>
-                                </div>
                               </div>
+                              
                             </div>
-                            
-                          </div>
-                      </div> 
-                      <br> <br>
-                      
-                            <div class="container">
-                            <div class="row">
-                              <div class="col-5 offset-1">
-                                <div class="form-check">
-                                  <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
-                                  <label class="form-check-label" for="exampleRadios1">
-                                  <?php echo $alt[0]; ?>
-                                  </label>
-                                </div>
-
-                              </div>
-                              <div class="col-5 ">
-
-                                <div class="form-check">
-                                  <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
-                                  <label class="form-check-label" for="exampleRadios2">
-                                  <?php echo $alt[1]; ?>
-                                  </label>
-                                </div>
-
-                              </div>
-                              <div class="w-100"><br> <br></div>
-                              <div class="col-5 offset-1">
-
-                               <div class="form-check">
-                                  <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3" value="option3">
-                                  <label class="form-check-label" for="exampleRadios3">
-                                  <?php echo $alt[2]; ?> 
-                                  </label>
-                                </div>
-
-                              </div>
-                              <div class="col-5 ">
-
-                                <div class="form-check">
-                                  <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios4" value="option4">
-                                  <label class="form-check-label" for="exampleRadios4">
-                                    
-                                  <?php echo $alt[3]; ?>
-                                  </label>
-                                </div>
-
-                              </div>
-                            </div>
-                          </div>
-
+                        </div> 
+                        <br> <br>
                         
+                              <div class="container">
+                              <div class="row">
+                                <div class="col-5 offset-1">
+                                  <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="alt" id="alt1" value="<?php echo $alt[0]; ?>" >
+                                    <label class="form-check-label" for="alt1">
+                                    <?php echo $alt[0]; ?>
+                                    </label>
+                                  </div>
 
-                          <br> <br>
-                      <div class="container">
-                        <div class="row align-items-end">
-                            <div class="col">
-                            <div class="p-2 "><a href="Test.php?t=<?php echo $_GET['t'];?>&p=<?php echo $anterior;?>" class="btn  btn-primary" type="button"><img src="assets\img\iconos\anterior.png" height ="50" width="55" /></a></div>
+                                </div>
+                                <div class="col-5 ">
+
+                                  <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="alt" id="alt2" value="<?php echo $alt[1]; ?>">
+                                    <label class="form-check-label" for="alt2">
+                                    <?php echo $alt[1]; ?>
+                                    </label>
+                                  </div>
+
+                                </div>
+                                <div class="w-100"><br> <br></div>
+                                <div class="col-5 offset-1">
+
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="alt" id="alt3" value="<?php echo $alt[2]; ?>">
+                                    <label class="form-check-label" for="alt3">
+                                    <?php echo $alt[2]; ?> 
+                                    </label>
+                                  </div>
+
+                                </div>
+                                <div class="col-5 ">
+
+                                  <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="alt" id="alt4" value="<?php echo $alt[3]; ?>">
+                                    <label class="form-check-label" for="alt4">
+                                      
+                                    <?php echo $alt[3]; ?>
+                                    </label>
+                                  </div>
+
+                                </div>
+                              </div>
                             </div>
-                            <div class="col">
-                            <?php if($final){
-                              ?>
-                           
+
                           
-                            <div class="p-2 "><a href="procesaTest.php?t=<?php echo $_GET['t'];?>&p=<?php echo $anterior;?>" class="btn  btn-primary" type="button"><img src="assets\img\iconos\check.png" height ="43" width="40" /></a></div>
+
+                            <br> <br>
+                        <div class="container">
+                          <div class="row align-items-end">
+                              <div class="col">
+                              <div class="p-2 "><a href="Test.php?t=<?php echo $_GET['t'];?>&p=<?php echo $anterior;?>" class="btn  btn-primary" type="button"><img src="assets\img\iconos\anterior.png" height ="50" width="55" /></a></div>
+                              </div>
+                              <div class="col">
+                              <?php if($final){
+                                ?>
                             
                             
-                            <?php } ?>
+                              <div class="p-2 "><button  class="btn btn-primary" type="submit"><img src="assets\img\iconos\check.png" height ="43" width="40" /></button></div>
+                              
+                              
+                              <?php } ?>
+                              </div>
+                              <div class="col">
+                              <div class="p-2 "><a href="Test.php?t=<?php echo $_GET['t'];?>&p=<?php echo $siguiente;?>" class="btn  btn-primary" type="button"><img src="assets\img\iconos\siguiente.png" height ="50" width="55" /></a></div>
+                              </div>
+                            
                             </div>
-                            <div class="col">
-                            <div class="p-2 "><a href="Test.php?t=<?php echo $_GET['t'];?>&p=<?php echo $siguiente;?>" class="btn  btn-primary" type="button"><img src="assets\img\iconos\siguiente.png" height ="50" width="55" /></a></div>
-                            </div>
-                           
-                          </div>
-                      </div> 
-
-
+                        </div> 
                     </div>
-                  </div>
+              </div>
             </div>
-
+       <form > 
 
 </body>
+
+
+        <script>
+
+          function salir(){
+
+            //swal("Enviado!", "Nueva clave enviada a su correo", "success");
+             Swal.fire({
+            title: 'Esta seguro que quiere salir ?',
+            text: "No se guardara el pregreso en este test",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#d33 ',
+            cancelButtonColor: '#3085d6',
+            confirmButtonText: 'SI, salir'
+          }).then((result) => {
+            if (result.isConfirmed) {
+              
+              window.open("Menupaciente.php", "_self");   
+            }
+           
+          })
+
+
+
+          }
+     
+        
+        </script>
+
+      
+
 </html>
