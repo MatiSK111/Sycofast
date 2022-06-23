@@ -18,7 +18,7 @@ $fecha = date('Y-m-d', time());
 $sql2="insert into registro values('".$idreg."',NOW(),0,'Resultado por defecto','".$_GET['r']."',".$_GET['t'].",2)";
 $result2=mysqli_query(conexion(),$sql2);
 
-header('Location:Test.php?t='.$_GET['t'].'&p=1&reg='.$idreg);
+header('Location:Test.php?t='.$_GET['t'].'&p=1&reg='.$idreg.'&final=false');
 
 
 

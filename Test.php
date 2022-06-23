@@ -44,21 +44,17 @@ $cont=mysqli_num_rows($result);
 $datos=mysqli_fetch_array($result);
 
 
+//$final=false;
+$_GET['p'];
+
 $final=false;
-$siguiente=$_GET['p'];
-$anterior=$_GET['p'];
 
-if($anterior>1){
-  $anterior=$anterior-1;
-}
-if($siguiente>=$cont){
 
-  $siguiente=$siguiente;
+if($_GET['p']>=$cont){
+
   $final=true;
-}else{
-
-  $siguiente=$siguiente+1;
 }
+
 
 $aumento = ($_GET['p']*100)/$cont;
 
@@ -85,6 +81,7 @@ while($i<=$cont3){
   $dato4=mysqli_fetch_array($result4);
 
   $alt[] = $dato4['descripcionalternativa'];
+  $ids[] = $dato4['idAlternativas'];
 
 $i=$i+1;
 }
@@ -96,7 +93,9 @@ $i=$i+1;
 <body>
 
 <br><br><br>
- <form name="test" action="procesaTest.php?t=<?php echo $_GET['t'];?>" method="post" > 
+ <form name="test" action="procesaTest.php?&reg=<?php echo $_GET['reg'];?>&t=<?php echo $_GET['t'];?>&p=<?php echo $_GET['p'];?>" method="post" > 
+
+  <input type="hidden" name="idpregunta" value="<?php echo $datos2['idpregunta']?>">
 
   <div class="col-8 offset-2" style="padding-bottom:500px">
     <div class="card bg-primary shadow-soft text-center border-light">
@@ -143,7 +142,7 @@ $i=$i+1;
                               <div class="row">
                                 <div class="col-5 offset-1">
                                   <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="alt" id="alt1" value="<?php echo $alt[0]; ?>" >
+                                    <input class="form-check-input" type="radio" name="eleccion" id="alt1" value="<?php echo $ids[0]; ?>" >
                                     <label class="form-check-label" for="alt1">
                                     <?php echo $alt[0]; ?>
                                     </label>
@@ -153,7 +152,7 @@ $i=$i+1;
                                 <div class="col-5 ">
 
                                   <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="alt" id="alt2" value="<?php echo $alt[1]; ?>">
+                                    <input class="form-check-input" type="radio" name="eleccion" id="alt2" value="<?php echo $ids[1]; ?>">
                                     <label class="form-check-label" for="alt2">
                                     <?php echo $alt[1]; ?>
                                     </label>
@@ -164,7 +163,7 @@ $i=$i+1;
                                 <div class="col-5 offset-1">
 
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="alt" id="alt3" value="<?php echo $alt[2]; ?>">
+                                    <input class="form-check-input" type="radio" name="eleccion" id="alt3" value="<?php echo $ids[2]; ?>">
                                     <label class="form-check-label" for="alt3">
                                     <?php echo $alt[2]; ?> 
                                     </label>
@@ -174,7 +173,7 @@ $i=$i+1;
                                 <div class="col-5 ">
 
                                   <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="alt" id="alt4" value="<?php echo $alt[3]; ?>">
+                                    <input class="form-check-input" type="radio" name="eleccion" id="alt4" value="<?php echo $ids[3]; ?>">
                                     <label class="form-check-label" for="alt4">
                                       
                                     <?php echo $alt[3]; ?>
@@ -191,20 +190,18 @@ $i=$i+1;
                         <div class="container">
                           <div class="row align-items-end">
                               <div class="col">
-                              <div class="p-2 "><a href="Test.php?t=<?php echo $_GET['t'];?>&p=<?php echo $anterior;?>" class="btn  btn-primary" type="button"><img src="assets\img\iconos\anterior.png" height ="50" width="55" /></a></div>
+                              <div class="p-2 "><button name="accion" value="a" class="btn  btn-primary" type="submit"><img src="assets\img\iconos\anterior.png" height ="50" width="55" /></button></div>
                               </div>
                               <div class="col">
                               <?php if($final){
                                 ?>
                             
-                            
-                              <div class="p-2 "><button  class="btn btn-primary" type="submit"><img src="assets\img\iconos\check.png" height ="43" width="40" /></button></div>
-                              
+                              <div class="p-2 "><button  name="finalizar" class="btn btn-primary" type="submit"><img src="assets\img\iconos\check.png" height ="43" width="40" /></button></div>
                               
                               <?php } ?>
                               </div>
                               <div class="col">
-                              <div class="p-2 "><a href="Test.php?t=<?php echo $_GET['t'];?>&p=<?php echo $siguiente;?>" class="btn  btn-primary" type="button"><img src="assets\img\iconos\siguiente.png" height ="50" width="55" /></a></div>
+                              <div class="p-2 "><button name="accion" value="s" class="btn  btn-primary" type="submit"><img src="assets\img\iconos\siguiente.png" height ="50" width="55"  /></button></div>
                               </div>
                             
                             </div>
