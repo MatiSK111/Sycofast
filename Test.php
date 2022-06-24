@@ -190,7 +190,7 @@ $i=$i+1;
                         <div class="container">
                           <div class="row align-items-end">
                               <div class="col">
-                              <div class="p-2 "><button name="accion" value="a" class="btn  btn-primary" type="submit"><img src="assets\img\iconos\anterior.png" height ="50" width="55" /></button></div>
+                              <div class="p-2 "><button name="accion" value="a" class="btn  btn-primary" type="button"  onclick="enviar()"><img src="assets\img\iconos\anterior.png" height ="50" width="55" /></button></div>
                               </div>
                               <div class="col">
                               <?php if($final){
@@ -201,7 +201,7 @@ $i=$i+1;
                               <?php } ?>
                               </div>
                               <div class="col">
-                              <div class="p-2 "><button name="accion" value="s" class="btn  btn-primary" type="submit"><img src="assets\img\iconos\siguiente.png" height ="50" width="55"  /></button></div>
+                              <div class="p-2 "><button name="accion" value="s" class="btn  btn-primary" type="button" onclick="enviar()"><img src="assets\img\iconos\siguiente.png" height ="50" width="55"  /></button></div>
                               </div>
                             
                             </div>
@@ -234,11 +234,12 @@ $i=$i+1;
             }
            
           })
-
-
-
           }
      
+          function enviar(){
+
+            document.test.submit();
+          }
         
         </script>
 

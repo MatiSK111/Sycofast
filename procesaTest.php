@@ -12,9 +12,9 @@ echo ' idregistro:'.$_GET['reg'];
 echo ' idpregunta:'.$_POST['idpregunta'];
 
 
-$cons="select * from respuestas where registro_Test_idtest =".$_GET['t']."and Idpregunta =".$_POST['idpregunta']."and desarrollo ='".$_GET['reg']."'";
+$cons="select * from respuestas where Idpregunta =".$_POST['idpregunta']." and registro_Test_idtest  =".$_GET['t']." and desarrollo ='".$_GET['reg']."'";
 echo $cons;
-die;
+
 $resultado=mysqli_query(conexion(), $cons);
 $contador=mysqli_num_rows($resultado);
 
@@ -58,7 +58,7 @@ if($accion=='s'){
     header('Location:Test.php?reg='.$_GET['reg'].'&t='.$_GET['t'].'&p='.$siguiente);
 
 }
-if($accion=="a"){
+if($accion=='a'){
 
     header('Location:Test.php?reg='.$_GET['reg'].'&t='.$_GET['t'].'&p='.$anterior);
 }
