@@ -71,8 +71,6 @@ $sql3="SELECT * FROM alternativa WHERE Pregunta_idpregunta   = ".$datos2['idpreg
 $result3=mysqli_query(conexion(), $sql3);
 $cont3=mysqli_num_rows($result3);
 
-
-
 //llenamos el arreglo con las descripciones de las alternativas
 $i=1;
 while($i<=$cont3){
@@ -96,7 +94,7 @@ $i=$i+1;
  <form name="test" action="procesaTest.php?&reg=<?php echo $_GET['reg'];?>&t=<?php echo $_GET['t'];?>&p=<?php echo $_GET['p'];?>" method="post" > 
 
   <input type="hidden" name="idpregunta" value="<?php echo $datos2['idpregunta']?>">
-
+  <input type="hidden" name="oc">
   <div class="col-8 offset-2" style="padding-bottom:500px">
     <div class="card bg-primary shadow-soft text-center border-light">
        <div class="card-body">
@@ -190,7 +188,7 @@ $i=$i+1;
                         <div class="container">
                           <div class="row align-items-end">
                               <div class="col">
-                              <div class="p-2 "><button name="accion" value="a" class="btn  btn-primary" type="button"  onclick="enviar()"><img src="assets\img\iconos\anterior.png" height ="50" width="55" /></button></div>
+                              <div class="p-2 "><button name="accion" value="a" class="btn  btn-primary" type="button"  onclick="enviar(this.value)"><img src="assets\img\iconos\anterior.png" height ="50" width="55" /></button></div>
                               </div>
                               <div class="col">
                               <?php if($final){
@@ -201,9 +199,9 @@ $i=$i+1;
                               <?php } ?>
                               </div>
                               <div class="col">
-                              <div class="p-2 "><button name="accion" value="s" class="btn  btn-primary" type="button" onclick="enviar()"><img src="assets\img\iconos\siguiente.png" height ="50" width="55"  /></button></div>
+                              <div class="p-2 "><button name="accion" value="s" class="btn  btn-primary" type="button" onclick="enviar(this.value)"><img src="assets\img\iconos\siguiente.png" height ="50" width="55"  /></button></div>
                               </div>
-                            
+                          
                             </div>
                         </div> 
                     </div>
@@ -236,9 +234,22 @@ $i=$i+1;
           })
           }
      
-          function enviar(){
+          function enviar(val){
+            //alert(val);
+            if ((alt1.checked)||(alt2.checked)||(alt3.checked)||(alt4.checked)){
 
-            document.test.submit();
+              document.test.oc.value=val;
+             document.test.submit();
+            }else{
+
+
+              Swal.fire(
+                  'No Respondio la pregunta',
+                  'Por favor seleccione alguna alternativa',
+                  'question'
+                )
+            } 
+            
           }
         
         </script>
