@@ -85,9 +85,9 @@ session_start();
         Swal.fire({
           position: 'center',
           icon: 'success',
-          title: 'Your work has been saved',
-          showConfirmButton: false,
-          timer: 1500
+          title: 'Test Completado correctamente',
+          showConfirmButton: true,
+          timer: 2000
         })
         
         </script>
