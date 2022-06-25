@@ -41,7 +41,7 @@ if($cont!=0)
 
    
 }else{
-   header('Location:login.php?error');
+   header('Location:Login.php?error');
 }
 
 ?>
