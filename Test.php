@@ -26,7 +26,7 @@
 <!-- Fontawesome -->
 <link type="text/css" href="./vendor/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet">
 
-<!-- Pixel CSS -->
+<!-- sweetalert -->
 <link type="text/css" href="./css/neumorphism.css" rel="stylesheet">
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script src="sweetalert2.all.min.js"></script>
@@ -42,9 +42,8 @@ $sql="SELECT * FROM pregunta WHERE Test_idtest=".$_GET['t'];
 $result=mysqli_query(conexion(), $sql);
 $cont=mysqli_num_rows($result);
 $datos=mysqli_fetch_array($result);
+echo $cont;
 
-
-//$final=false;
 $_GET['p'];
 
 $final=false;
@@ -83,7 +82,35 @@ while($i<=$cont3){
 
 $i=$i+1;
 }
+//preguntamo por la cantidad de respuestas contestadas
+$respondidas="select * from respuestas where desarrollo='".$_GET['reg']."'";
+$resresp=mysqli_query(conexion(), $respondidas);
+$conres=mysqli_num_rows($resresp);
 
+$idresp='R-'.$_GET['reg'].$datos2['idpregunta'];
+$cons="select * from respuestas where idRespuestas='".$idresp."'";
+//echo $cons;
+//die;
+$resultado=mysqli_query(conexion(), $cons);
+$contador=mysqli_num_rows($resultado);
+$d=mysqli_fetch_array($resultado);
+$idalt=0;
+//Si la pregunta actual esta respondida
+if($contador!=0){
+
+  $idalt=$d['IdAlternativa'];
+}
+
+
+
+echo $conres;
+ //echo $cont5;
+ // die;
+//Si estan todas respondidas
+if($conres==$cont){
+  $final=true;
+  
+}
 
 
 ?>
@@ -140,7 +167,7 @@ $i=$i+1;
                               <div class="row">
                                 <div class="col-5 offset-1">
                                   <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="eleccion" id="alt1" value="<?php echo $ids[0]; ?>" >
+                                    <input class="form-check-input" type="radio" name="eleccion" id="alt1" value="<?php echo $ids[0]; ?>" <?php if($idalt==$ids[0]){?>checked <?php }?>>
                                     <label class="form-check-label" for="alt1">
                                     <?php echo $alt[0]; ?>
                                     </label>
@@ -150,7 +177,7 @@ $i=$i+1;
                                 <div class="col-5 ">
 
                                   <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="eleccion" id="alt2" value="<?php echo $ids[1]; ?>">
+                                    <input class="form-check-input" type="radio" name="eleccion" id="alt2" value="<?php echo $ids[1]; ?>"<?php if($idalt==$ids[1]){?>checked <?php }?>>
                                     <label class="form-check-label" for="alt2">
                                     <?php echo $alt[1]; ?>
                                     </label>
@@ -161,7 +188,7 @@ $i=$i+1;
                                 <div class="col-5 offset-1">
 
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="eleccion" id="alt3" value="<?php echo $ids[2]; ?>">
+                                    <input class="form-check-input" type="radio" name="eleccion" id="alt3" value="<?php echo $ids[2]; ?>"<?php if($idalt==$ids[2]){?>checked <?php }?>>
                                     <label class="form-check-label" for="alt3">
                                     <?php echo $alt[2]; ?> 
                                     </label>
@@ -171,7 +198,7 @@ $i=$i+1;
                                 <div class="col-5 ">
 
                                   <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="eleccion" id="alt4" value="<?php echo $ids[3]; ?>">
+                                    <input class="form-check-input" type="radio" name="eleccion" id="alt4" value="<?php echo $ids[3]; ?>"<?php if($idalt==$ids[3]){?>checked <?php }?>>
                                     <label class="form-check-label" for="alt4">
                                       
                                     <?php echo $alt[3]; ?>
@@ -194,8 +221,7 @@ $i=$i+1;
                               <?php if($final){
                                 ?>
                             
-                              <div class="p-2 "><button  name="finalizar" class="btn btn-primary" type="submit"><img src="assets\img\iconos\check.png" height ="43" width="40" /></button></div>
-                              
+                              <div class="p-2 "><button  name="accion" value="f"class="btn btn-primary" type="button" onclick="enviar(this.value)"><img src="assets\img\iconos\check.png" height ="43" width="40" /></button></div>
                               <?php } ?>
                               </div>
                               <div class="col">
@@ -219,7 +245,7 @@ $i=$i+1;
             //swal("Enviado!", "Nueva clave enviada a su correo", "success");
              Swal.fire({
             title: 'Esta seguro que quiere salir ?',
-            text: "No se guardara el pregreso en este test",
+            text: "Seria mejor que completara el test",
             icon: 'warning',
             showCancelButton: true,
             confirmButtonColor: '#d33 ',

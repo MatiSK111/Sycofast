@@ -83,5 +83,10 @@ if($_POST['oc']=='a'){
     header('Location:Test.php?reg='.$_GET['reg'].'&t='.$_GET['t'].'&p='.$anterior);
 }
 
+if($_POST['oc']=='f'){
+
+  header('Location:Menupaciente.php?test=fin');
+}
+
 
 ?>

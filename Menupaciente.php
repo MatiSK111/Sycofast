@@ -28,6 +28,8 @@
 
 <!-- Pixel CSS -->
 <link type="text/css" href="./css/neumorphism.css" rel="stylesheet">
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="sweetalert2.all.min.js"></script>
 
 </head>
 <?php
@@ -75,6 +77,23 @@ session_start();
                   </div>
             </div>
 
+   <?php
+   if($_GET['test']=='fin')
+    {
+    ?>
+        <script>
+        Swal.fire({
+          position: 'center',
+          icon: 'success',
+          title: 'Your work has been saved',
+          showConfirmButton: false,
+          timer: 1500
+        })
+        
+        </script>
 
+  <?php
+   }
+    ?>
 </body>
 </html>
