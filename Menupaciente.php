@@ -33,7 +33,16 @@
 
 </head>
 <?php
+include("functions/setup.php");
 session_start();
+
+
+$sql="select * from cola where rutpaciente='".$_SESSION['id']."' and estado = 1";
+//echo $sql;
+//die;
+$result=mysqli_query(conexion(),$sql);
+$cont=mysqli_num_rows($result);
+$datos=mysqli_fetch_array($result);
 
 ?>
 
@@ -45,7 +54,7 @@ session_start();
                 <div class="card bg-primary shadow-soft text-center border-light">
                     <div class="card-body">
                     <br><br>
-
+                   
                       <div class="d-flex justify-content-around">
                         <div class="p-2 "><a href="cerrarsesion.php" class="btn  btn-primary" type="button"><img src="assets\img\iconos\logout.png" height ="30" width="30" /></a></div>
                         <div class="p-2"><h1 style="color:rgb(120,120,171);" >Menu Principal</h1></div>
@@ -59,10 +68,15 @@ session_start();
                      <br><br><br><br><br>
                       <div class="container">
                         <div class="row align-items-end">
-                            <div class="col">
-                            <a href="procesainiciotest.php?t=1&r=<?php echo $_SESSION['id']; ?>"class="btn btn-lg btn-primary" type="button"><pre>    <h3 >   Realizar Test   </h3>    </pre><img src="assets\img\iconos\test.png" height ="50" width="50" /></a>
+                        <?php  if($cont=!0){ ?>
+
+                          <div class="col">
+                            <a href="procesainiciotest.php?t=<?php echo $datos['idtest']; ?>&r=<?php echo $_SESSION['id']; ?>"class="btn btn-lg btn-primary" type="button"><pre>    <h3 >   Realizar Test   </h3>    </pre><img src="assets\img\iconos\test.png" height ="50" width="50" /></a>
                             </div>
                             <div class="col">
+
+                        <?php  } ?>
+                         
                             <button class="btn btn-lg btn-primary2" type="button"><pre>    <h3 >   Ver mis Test   </h3>    </pre><img src="assets\img\iconos\lista.png" height ="50" width="50" /></button>
                             </div>
                             <div class="col">
@@ -94,6 +108,20 @@ session_start();
 
   <?php
    }
+    
+    if($cont=!0){
+      ?>
+      <script>
+       Swal.fire(
+      'Test disponibles',
+      'Hay Test disponibles para completar',
+      'question'
+      )
+        
+        </script>
+    
+    <?php
+    }
     ?>
 </body>
 </html>
