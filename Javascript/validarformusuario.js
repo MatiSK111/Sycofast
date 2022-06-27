@@ -1,4 +1,3 @@
-
 function validarlogin()
 {
     if(document.login.user.value=="")

@@ -66,7 +66,7 @@ session_start();
                             <button class="btn btn-lg btn-primary2" type="button"><pre>    <h3 >   Ver mis Test   </h3>    </pre><img src="assets\img\iconos\lista.png" height ="50" width="50" /></button>
                             </div>
                             <div class="col">
-                            <a href="resultados.php"class="btn btn-lg btn-primary3" type="button"><pre>    <h3 Style="Color:#FFF">   Mis Estadisticas   </h3>    </pre><img src="assets\img\iconos\stats.png" height ="50" width="50" /></a>
+                            <a href="Resultados.php"class="btn btn-lg btn-primary3" type="button"><pre>    <h3 Style="Color:#FFF">   Mis Estadisticas   </h3>    </pre><img src="assets\img\iconos\stats.png" height ="50" width="50" /></a>
                             </div>
                           </div>
                       </div> 

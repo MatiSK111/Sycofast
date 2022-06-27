@@ -6,7 +6,7 @@ session_start();
 //hay que cambiar nombre por usuario en la tabla
 $sql="select * from usuario where usuario='".$_POST['user']."' and clave='".md5($_POST['pass'])."' and estado >= 1";
 //Cambiar la clave tambien por un varchar de arto pa encriptar
-echo $sql;
+//echo $sql;
 //die; cieere de ejecución hace un stop
 $result=mysqli_query(conexion(),$sql);
 $cont=mysqli_num_rows($result);
@@ -41,7 +41,7 @@ if($cont!=0)
 
    
 }else{
-   header('Location:Login.php?error');
+   header('Location:index.php?error');
 }
 
 ?>

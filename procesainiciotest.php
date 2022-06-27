@@ -4,19 +4,20 @@ include("functions/setup.php");
 
 session_start();
 //hay que cambiar nombre por usuario en la tabla
-$sql="select * from registro where Usuario_rut='".$_GET['r']."' and Test_idtest=".$_GET['t']." and estado >= 1";
+$sql="select * from registro where Usuario_rut='".$_SESSION['id']."' and Test_idtest=".$_GET['t']." and estado >= 1";
 //Cambiar la clave tambien por un varchar de arto pa encriptar
 //echo $sql;
 //die; 
 $result=mysqli_query(conexion(),$sql);
 $cont=mysqli_num_rows($result);
 
-$idreg=$_GET['r'].$_GET['t'].($cont + 1);
-echo $idreg;
+$idreg=$_SESSION['id'].$_GET['t'].($cont + 1);
+//echo $idreg;
 $fecha = date('Y-m-d', time());
 
-$sql2="insert into registro values('".$idreg."',NOW(),0,'Resultado por defecto','".$_GET['r']."',".$_GET['t'].",2)";
+$sql2="insert into registro values('".$idreg."',NOW(),0,'Resultado por defecto','".$_SESSION['id']."',".$_GET['t'].",2)";
 $result2=mysqli_query(conexion(),$sql2);
+//echo $sql2;
 
 header('Location:Test.php?t='.$_GET['t'].'&p=1&reg='.$idreg.'&final=false');
 
