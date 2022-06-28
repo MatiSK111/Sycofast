@@ -71,7 +71,7 @@ $datos=mysqli_fetch_array($result);
                         <?php  if($cont=!0){ ?>
 
                           <div class="col">
-                            <a href="procesainiciotest.php?t=<?php echo $datos['idtest']; ?>&r=<?php echo $_SESSION['id']; ?>"class="btn btn-lg btn-primary" type="button"><pre>    <h3 >   Realizar Test   </h3>    </pre><img src="assets\img\iconos\test.png" height ="50" width="50" /></a>
+                            <a href="procesainiciotest.php?t=<?php echo $datos['idtest'];?>&r=<?php echo $_SESSION['id']; ?>"class="btn btn-lg btn-primary" type="button"><pre>    <h3 >   Realizar Test   </h3>    </pre><img src="assets\img\iconos\test.png" height ="50" width="50" /></a>
                             </div>
                             <div class="col">
 

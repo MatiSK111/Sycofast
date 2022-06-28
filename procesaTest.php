@@ -85,6 +85,10 @@ if($_POST['oc']=='a'){
 
 if($_POST['oc']=='f'){
 
+  $upd2="UPDATE cola SET estado = 2 WHERE idtest=".$_GET['t']." and rutpaciente ='".$_SESSION['id']."'";
+  mysqli_query(conexion(), $upd2);
+
+
   header('Location:Menupaciente.php?test=fin');
 }
 
