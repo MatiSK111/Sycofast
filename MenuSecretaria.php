@@ -1,3 +1,7 @@
+<?php
+session_start();
+
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -30,10 +34,7 @@
 <link type="text/css" href="./css/neumorphism.css" rel="stylesheet">
 
 </head>
-<?php
-session_start();
 
-?>
 <body>
 
 <br><br><br><br>
@@ -61,7 +62,7 @@ session_start();
                             <a href="Registro.php"class="btn btn-lg btn-primary4" type="button"><pre>    <h3 Style="Color:#FFF">  Registrar Paciente  </h3>    </pre><img src="assets\img\iconos\group.png" height ="50" width="50" /></a> 
                           </div>
                             <div class="col">
-                            <button class="btn btn-lg btn-primary3" type="button"><pre>    <h3 Style="Color:#FFF">        Enviar Test        </h3>   </pre><img src="assets\img\iconos\comment.png" height ="50" width="50" /></button>
+                            <a href="Enviartest.php" class="btn btn-lg btn-primary3" type="button"><pre>    <h3 Style="Color:#FFF">        Enviar Test        </h3>   </pre><img src="assets\img\iconos\comment.png" height ="50" width="50" /></a>
                            
                           </div>
                       </div> 
