@@ -42,7 +42,7 @@
                     <br><br>
 
                         <div class="d-flex justify-content-around">
-                            <div class="p-2 "><a href="index.php" class="btn  btn-primary" type="button"><img src="assets\img\iconos\left-arrow.png" height ="30" width="30" /></a></div>
+                            <div class="p-2 "><a href="Menupaciente.php" class="btn  btn-primary" type="button"><img src="assets\img\iconos\left-arrow.png" height ="30" width="30" /></a></div>
                             <div class="p-2"><h1 style="color:rgb(120,120,171);" >Resultados Test</h1></div>
                             <div class="p-2 ">
                             <button class="btn btn-icon-only btn-pill btn-primary" type="button" aria-label="up button" title="up button">

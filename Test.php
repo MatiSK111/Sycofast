@@ -1,3 +1,7 @@
+<?php
+include("functions/setup.php");
+session_start();
+?>
 <!DOCTYPE html>
 <html>
 <head>
