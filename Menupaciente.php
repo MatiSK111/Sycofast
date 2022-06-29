@@ -1,3 +1,7 @@
+<?php
+include("functions/setup.php");
+session_start();
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -33,9 +37,7 @@
 
 </head>
 <?php
-include("functions/setup.php");
-session_start();
-
+$idtest=0;
 
 $sql="select * from cola where rutpaciente='".$_SESSION['id']."' and estado = 1";
 //echo $sql;
@@ -43,6 +45,11 @@ $sql="select * from cola where rutpaciente='".$_SESSION['id']."' and estado = 1"
 $result=mysqli_query(conexion(),$sql);
 $cont=mysqli_num_rows($result);
 $datos=mysqli_fetch_array($result);
+
+if($cont!=0){
+
+  $idtest=$datos['idtest'];
+}
 
 ?>
 
@@ -71,7 +78,7 @@ $datos=mysqli_fetch_array($result);
                         <?php  if($cont=!0){ ?>
 
                           <div class="col">
-                            <a href="procesainiciotest.php?t=<?php echo $datos['idtest'];?>&r=<?php echo $_SESSION['id']; ?>"class="btn btn-lg btn-primary" type="button"><pre>    <h3 >   Realizar Test   </h3>    </pre><img src="assets\img\iconos\test.png" height ="50" width="50" /></a>
+                            <a href="procesainiciotest.php?t=<?php echo $idtest;?>&r=<?php echo $_SESSION['id']; ?>"class="btn btn-lg btn-primary" type="button"><pre>    <h3 >   Realizar Test   </h3>    </pre><img src="assets\img\iconos\test.png" height ="50" width="50" /></a>
                             </div>
                             <div class="col">
 
@@ -108,20 +115,23 @@ $datos=mysqli_fetch_array($result);
 
   <?php
    }
-    
-    if($cont=!0){
-      ?>
-      <script>
-       Swal.fire(
-      'Test disponibles',
-      'Hay Test disponibles para completar',
-      'question'
-      )
+    ?>
+
+  <?php
+        if(isset($_GET['no']))
+        {
+            ?>
+        <script>
+        Swal.fire(
+          'No Hay test',
+          'Usted no tiene test por completar Actualmente',
+          'question'
+        )
         
         </script>
-    
-    <?php
-    }
-    ?>
+
+        <?php
+        }
+        ?>
 </body>
 </html>

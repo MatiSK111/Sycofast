@@ -3,6 +3,8 @@
 include("functions/setup.php");
 
 session_start();
+
+if($_GET['t']!=0){
 //hay que cambiar nombre por usuario en la tabla
 $sql="select * from registro where Usuario_rut='".$_SESSION['id']."' and Test_idtest=".$_GET['t']." and estado >= 1";
 //Cambiar la clave tambien por un varchar de arto pa encriptar
@@ -20,6 +22,11 @@ $result2=mysqli_query(conexion(),$sql2);
 //echo $sql2;
 
 header('Location:Test.php?t='.$_GET['t'].'&p=1&reg='.$idreg.'&final=false');
+
+}else{
+
+    header('Location:Menupaciente.php?no');
+}
 
 
 
