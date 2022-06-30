@@ -1,6 +1,9 @@
 <?php
+
 include("functions/setup.php");
+
 session_start();
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -84,7 +87,7 @@ if($cont!=0){
 
                         <?php  } ?>
                          
-                            <button class="btn btn-lg btn-primary2" type="button"><pre>    <h3 >   Ver mis Test   </h3>    </pre><img src="assets\img\iconos\lista.png" height ="50" width="50" /></button>
+                            <a href="Mistest.php"class="btn btn-lg btn-primary2" type="button"><pre>    <h3 >   Ver mis Test   </h3>    </pre><img src="assets\img\iconos\lista.png" height ="50" width="50" /></a>
                             </div>
                             <div class="col">
                             <a href="Resultados.php"class="btn btn-lg btn-primary3" type="button"><pre>    <h3 Style="Color:#FFF">   Mis Estadisticas   </h3>    </pre><img src="assets\img\iconos\stats.png" height ="50" width="50" /></a>
