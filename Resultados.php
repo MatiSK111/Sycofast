@@ -1,3 +1,10 @@
+<?php
+
+include("functions/setup.php");
+
+session_start();
+
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -32,7 +39,32 @@
 <script src="https://cdn.jsdelivr.net/npm/chart.js@latest/dist/Chart.min.js"></script>
 
 </head>
+<?php
+
+$comp=0;
+$nocomp=0;
+$sql="select * from cola where rutpaciente='".$_SESSION['id']."'";
+//echo $sql;
+//die;
+$result=mysqli_query(conexion(),$sql);
+$cont=mysqli_num_rows($result);
+
+while($datos=mysqli_fetch_array($result)){
+
+    if($datos['Estado']==2){
+
+        $comp=$comp+1; 
+    }
+    if($datos['Estado']==1){
+
+        $nocomp=$nocomp+1; 
+    }
+
+}
+
+?>
 <body>
+
 
 <br><br><br><br>
 
@@ -43,32 +75,33 @@
 
                         <div class="d-flex justify-content-around">
                             <div class="p-2 "><a href="Menupaciente.php" class="btn  btn-primary" type="button"><img src="assets\img\iconos\left-arrow.png" height ="30" width="30" /></a></div>
-                            <div class="p-2"><h1 style="color:rgb(120,120,171);" >Resultados Test</h1></div>
+                            <div class="p-2"><h1 style="color:rgb(120,120,171);" >Datos Test</h1></div>
                             <div class="p-2 ">
-                            <button class="btn btn-icon-only btn-pill btn-primary" type="button" aria-label="up button" title="up button">
-                                <img src="assets\img\iconos\account.png" height ="110" width="110"/>
-                            </button>
+                                <button class="btn btn-icon-only btn-pill btn-primary" type="button" aria-label="up button" title="up button">
+                                <img src="assets\fotoperfil\<?php echo $_SESSION['foto']; ?>" height ="145" width="145" Style="border-radius:150px"/>
+                                </button>
+                            </div>
                         </div>
-                        </div>
-                        <br><br><br>
+                       
+                        <br><br>
                         <div class="row">
                         
-                        <div class="col-4 offset-1">
+                        <div class="col-3 offset-2">
 
                             <div class="card bg-primary shadow-soft text-center border-light">
+                                <br><br><br>
                                 <div class="card-body">
-                                    <p>El resultado de su prediagnostico arroja los siguentes nuveles con resperco a los valores correspondientes
-                                        a lo que vendria siendo algo como nose continuamos rellenando el parrafo pa ver como se ve .
-                                        me parece que vamos a tener que ponerle mas palabras para que se vea mas cuadrada laa lo que vendria siendo algo como nose continuamos rellenando el parrafo pa ver como se ve .
-                                        me parece que vamos a tener que ponerle mas palabras para que se vea mas cuadrada la tarjeta si si claro que si
-                                    </p>
+                                    <p><h4>Sr(a) <?php echo $_SESSION['user']; ?> Como puede apreciar a su derecha se encuentra una grafica en representacion de sus test realizados y los que aun estan por completar.
+                                        es importante que usted complete la totalidad de los test que su Psicologo le envie ya que estos
+                                        lo ayudaran con el prediagnostico y a la vez a agilizar su atencion.
+                                    </p></h4>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-5 offset-2"> <canvas id="grafica"  height="200"></canvas></div>
+                        <div class="col-6 offset-1"> <canvas id="grafica"  height="170%"></canvas></div>
                        
                     </div>
-
+                    <br><br>  <br>
                    
 
                  </div>
@@ -78,29 +111,27 @@
 </body>
 
 <script>
+//pasamos las variABLES completada y nocomp de php a javascript
+const co = "<?php echo $comp ?>";
+const noco = "<?php echo $nocomp ?>";
 
-   
 
     const $grafica = document.querySelector("#grafica");
 // Las etiquetas son las porciones de la gráfica
-const etiquetas = ["Ansiedad", "Depresion", "Bipolar", "Enfermo"]
+const etiquetas = ["Test Completados", "Test Por realizar"]
 // Podemos tener varios conjuntos de datos. Comencemos con uno
 const datosIngresos = {
-    data: [1500, 400, 4000, 5000], // La data es un arreglo que debe tener la misma cantidad de valores que la cantidad de etiquetas
+    data: [co, noco], // La data es un arreglo que debe tener la misma cantidad de valores que la cantidad de etiquetas
     // Ahora debería haber tantos background colors como datos, es decir, para este ejemplo, 4
     backgroundColor: [
         'rgba(163,221,203,0.2)',
-        '#15829A',
-        '#7878AB',
         'rgba(229,112,126,0.2)',
     ],// Color de fondo
     borderColor: [
         'rgba(163,221,203,1)',
-        '#15829A',
-        '#7878AB',
         'rgba(229,112,126,1)',
     ],// Color del borde
-    borderWidth: 1,// Ancho del borde
+    borderWidth: 2,// Ancho del borde
 };
 new Chart($grafica, {
     type: 'pie',// Tipo de gráfica. Puede ser dougnhut o pie

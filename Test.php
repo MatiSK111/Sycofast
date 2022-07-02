@@ -1,6 +1,7 @@
 <?php
 include("functions/setup.php");
 session_start();
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -37,8 +38,6 @@ session_start();
 </head>
 
 <?php
-include("functions/setup.php");
-session_start();
 
 
 
@@ -46,9 +45,9 @@ $sql="SELECT * FROM pregunta WHERE Test_idtest=".$_GET['t'];
 $result=mysqli_query(conexion(), $sql);
 $cont=mysqli_num_rows($result);
 $datos=mysqli_fetch_array($result);
-echo $cont;
+//echo $cont;
 
-$_GET['p'];
+//$_GET['p'];
 
 $final=false;
 
@@ -107,7 +106,7 @@ if($contador!=0){
 
 
 
-echo $conres;
+//echo $conres;
  //echo $cont5;
  // die;
 //Si estan todas respondidas
@@ -121,7 +120,7 @@ if($conres==$cont){
 
 <body>
 
-<br><br><br>
+<br>
  <form name="test" action="procesaTest.php?&reg=<?php echo $_GET['reg'];?>&t=<?php echo $_GET['t'];?>&p=<?php echo $_GET['p'];?>" method="post" > 
 
   <input type="hidden" name="idpregunta" value="<?php echo $datos2['idpregunta']?>">
@@ -154,9 +153,11 @@ if($conres==$cont){
 
                                     <div class="tab-pane fade show active" id="tabs-text-1" role="tabpanel" aria-labelledby="tabs-text-1-tab">
                                       
-                                        <p>  <?php echo $datos2['Descripcionpregunta']; ?> </p>
-                                        
+                                        <p><h2>  <?php echo $datos2['Descripcionpregunta']; ?> </h2></p>
+                                        <?php if($datos2['imagen']!="NO"){?>
                                         <img src="assets\img\imagenespregunta\<?php echo $datos2['imagen'];?>" height ="300" width="400" />
+
+                                        <?php }?>
                                     </div>
                                   </div>
                                   </div>
@@ -203,13 +204,51 @@ if($conres==$cont){
 
                                   <div class="form-check">
                                     <input class="form-check-input" type="radio" name="eleccion" id="alt4" value="<?php echo $ids[3]; ?>"<?php if($idalt==$ids[3]){?>checked <?php }?>>
-                                    <label class="form-check-label" for="alt4">
-                                      
+                                    <label class="form-check-label" for="alt4"> 
                                     <?php echo $alt[3]; ?>
                                     </label>
                                   </div>
-
                                 </div>
+                                <?php 
+                                  if($cont3>=5){ ?>
+                                    <div class="w-100"><br> <br></div>
+                                    <div class="col-5 offset-1">
+    
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="eleccion" id="alt5" value="<?php echo $ids[4]; ?>"<?php if($idalt==$ids[4]){?>checked <?php }?>>
+                                        <label class="form-check-label" for="alt5">
+                                        <?php echo $alt[4]; ?> 
+                                        </label>
+                                      </div>
+                                    </div>
+                                <?php  } ?>
+
+                                <?php 
+                                  if($cont3>=6){ ?>
+                                   
+                                    <div class="col-5 "> 
+                                      <div class="form-check">
+                                          <input class="form-check-input" type="radio" name="eleccion" id="alt6" value="<?php echo $ids[5]; ?>"<?php if($idalt==$ids[5]){?>checked <?php }?>>
+                                          <label class="form-check-label" for="alt6">
+                                          <?php echo $alt[5]; ?> 
+                                          </label>
+                                        </div>
+                                    </div>
+                                <?php  } ?>
+
+                                <?php 
+                                  if($cont3>=7){ ?>
+                                    <div class="w-100"><br> <br></div>
+                                    <div class="col-5 offset-4">
+    
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="eleccion" id="alt7" value="<?php echo $ids[6]; ?>"<?php if($idalt==$ids[6]){?>checked <?php }?>>
+                                        <label class="form-check-label" for="alt7">
+                                        <?php echo $alt[6]; ?> 
+                                        </label>
+                                      </div>
+                                    </div>
+                                <?php  } ?>
                               </div>
                             </div>
 
@@ -266,7 +305,7 @@ if($conres==$cont){
      
           function enviar(val){
             //alert(val);
-            if ((alt1.checked)||(alt2.checked)||(alt3.checked)||(alt4.checked)){
+            if ((alt1.checked)||(alt2.checked)||(alt3.checked)||(alt4.checked)||(alt5.checked)||(alt6.checked)||(alt7.checked)){
 
               document.test.oc.value=val;
              document.test.submit();

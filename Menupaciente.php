@@ -74,8 +74,17 @@ if($cont!=0){
                          </button>
                        </div>
                      </div>
+
+                     <div class="d-flex justify-content-around">
+                            <div class="p-2 "></div>
+                            <div class="p-2"></div>
+                            <div class="p-2 offset-1 ">
+                            <h3 style="color:rgb(120,120,171);"><?php echo $_SESSION['user']; ?></h3>
+                                </button>
+                            </div>
+                        </div>
                     
-                     <br><br><br><br><br>
+                     <br><br><br><br>
                       <div class="container">
                         <div class="row align-items-end">
                         <?php  if($cont=!0){ ?>
