@@ -2,11 +2,16 @@
 include("functions/setup.php");
 session_start();
 
-$sql="SELECT * FROM registro where estado = 2";
+$sql="SELECT * FROM pregunta where Test_idtest=".$_GET['id'];
 $result=mysqli_query(conexion(), $sql);
 
+//Vemos cual es la pregunta que tiene mas alternativas para dejar maximo en la tabla
+$sql2="select Pregunta_idpregunta, count(Pregunta_idpregunta) as total from alternativa where Pregunta_Test_idtest = ".$_GET['id']." group by Pregunta_idpregunta order by 2 desc";
+$result2=mysqli_query(conexion(), $sql2);
+$datos2=mysqli_fetch_array($result2);
 
 
+/*
 $menu="";
 if($_SESSION['tipousu']=="Psicologo"){
 $menu="MenuPsicologo.php";
@@ -15,6 +20,7 @@ $menu="MenuPsicologo.php";
 if($_SESSION['tipousu']=="Secretaria"){
     $menu="MenuSecretaria.php";
     }
+    */
 ?>
 <!DOCTYPE html>
 <html>
@@ -58,8 +64,8 @@ if($_SESSION['tipousu']=="Secretaria"){
                     <div class="card-body">
 
                     <div class="d-flex justify-content-around">
-                            <div class="p-2 "><a href="<?php echo $menu; ?>" class="btn  btn-primary" type="button"><img src="assets\img\iconos\left-arrow.png" height ="30" width="30" /></a></div>
-                            <div class="p-2"><h1 style="color:rgb(120,120,171);" >Registro de test</h1></div>
+                            <div class="p-2 "><a href="javascript:history.back()" class="btn  btn-primary" type="button"><img src="assets\img\iconos\left-arrow.png" height ="30" width="30" /></a></div>
+                            <div class="p-2"><h1 style="color:rgb(120,120,171);" >Informacion del Test <?php echo $_GET['id']; ?></h1></div>
                             <div class="p-2 ">
                                 <button class="btn btn-icon-only btn-pill btn-primary" type="button" aria-label="up button" title="up button">
                                 <img src="assets\fotoperfil\<?php echo $_SESSION['foto']; ?>" height ="145" width="145" Style="border-radius:150px"/>
@@ -76,38 +82,41 @@ if($_SESSION['tipousu']=="Secretaria"){
                                 <div class="mb-5">
                                     <table class="table shadow-soft rounded">
                                         <tr>
-                                            <th class="border-0" scope="col">Nombre Test</th>
-                                            <th class="border-0" scope="col">Id registro</th>
-                                            <th class="border-0" scope="col">Rut Paciente</th>
-                                            <th class="border-0" scope="col">Nombre Paciente</th>
-                                            <th class="border-0" scope="col">Fecha</th>
-                                            <th class="border-0" scope="col">Puntaje</th>
-                                            <th class="border-0" scope="col">Resultado</th>
+                                            <th class="border-0" scope="col">Id Pregunta</th>
+                                            <th class="border-0" scope="col">Descripcion</th>
+                                            <th class="border-0" scope="col">Numero</th>
+                                            
+                                            <?php
+                                            $i=1;
+                                            while($i<=$datos2['total']){ ?>
+                                            <th class="border-0" scope="col">Alternativa <?php echo $i; ?></th>
+
+                                            <?php
+                                            $i=$i+1;
+                                            }  ?>
                                            
+                                        
                                         </tr>
                                         
                 <?php
                 while($datos=mysqli_fetch_array($result)){
-                   
-                   
-                    $sql3="SELECT * FROM test where idtest = ".$datos['Test_idtest'];
-                    $result3=mysqli_query(conexion(), $sql3);
-                    $datos3=mysqli_fetch_array($result3);
-
-                    $sql4="SELECT * FROM usuario where rut = '".$datos['Usuario_rut']."'";
+                    $sql4="SELECT * FROM alternativa where Pregunta_idpregunta=".$datos['idpregunta'];
                     $result4=mysqli_query(conexion(), $sql4);
-                    $datos4=mysqli_fetch_array($result4)
-                    
                 ?>
                     
                                         <tr>
-                                            <td><?php echo $datos3['nombre test']?></td>
-                                            <td><?php echo $datos['idregistro']?></td>
-                                            <td><?php echo $datos['Usuario_rut']?></td>
-                                            <td><?php echo $datos4['nombres']." ".$datos4['Apellidos'] ?></td>
-                                            <td><?php echo $datos['fecha']?></td>
-                                            <td><?php echo $datos['puntaje']?></td>
-                                            <td><?php echo $datos['Resultado']?></td>
+                                            
+                                            <td><?php echo $datos['idpregunta']?></td>
+                                            <td><?php echo $datos['Descripcionpregunta']?></td>
+                                            <td><?php echo $datos['numeropregunta']?></td>
+                                                                        <?php
+                                            while($datos4=mysqli_fetch_array($result4)){ ?>
+
+                                                <td><?php echo $datos4['descripcionalternativa']?></td>
+
+                                            <?php    }      ?>
+
+                                            
 
                                         </tr>
                 <?php

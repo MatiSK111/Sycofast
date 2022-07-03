@@ -71,7 +71,7 @@ session_start();
                             <a href="VerRegistros.php" class="btn btn-lg btn-primary3" type="button"><pre>   <h3 Style="Color:#FFF">    Ver  Registros    </h3>    </pre><img src="assets\img\iconos\verify.png" height ="50" width="50" /></a>
                             </div>
                             <div class="col">
-                            <button class="btn btn-lg btn-primary5" type="button"><pre>    <h3 Style="Color:#FFF">       Ver Tests      </h3>    </pre><img src="assets\img\iconos\preview.png" height ="50" width="50" /></button>
+                            <a href="VerTest.php" class="btn btn-lg btn-primary5" type="button"><pre>    <h3 Style="Color:#FFF">       Ver Tests      </h3>    </pre><img src="assets\img\iconos\preview.png" height ="50" width="50" /></a>
                            
                           </div>
                       </div> 

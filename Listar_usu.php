@@ -1,4 +1,3 @@
-
 <?php
 include("functions/setup.php");
 session_start();
