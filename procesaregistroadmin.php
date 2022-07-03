@@ -17,7 +17,7 @@ $tip=$_POST["tipo"];
 
 
 
-$sql = "INSERT INTO usuario (rut, usuario, clave, mail, nombres, Apellidos, fechanac, direccion, estado, telefono,tipo,foto) VALUES ('$rut','$user', '$pass', '$email', '$nombre','$ape','$fch', '$direc', '$stado', '$tel','$tip','perfil.jpeg')";
+$sql = "INSERT INTO usuario (rut, usuario, clave, mail, nombres, Apellidos, fechanac, direccion, estado, telefono,tipo,foto) VALUES ('$rut','$user', '$pass', '$email', '$nombre','$ape','$fch', '$direc', '$stado', '$tel','$tip','logo.png')";
 
 if (mysqli_query(conexion(), $sql)) {
     header("Location: index.php");

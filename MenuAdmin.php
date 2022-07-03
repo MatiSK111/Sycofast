@@ -1,3 +1,7 @@
+<?php
+session_start();
+
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -30,10 +34,7 @@
 <link type="text/css" href="./css/neumorphism.css" rel="stylesheet">
 
 </head>
-<?php
-session_start();
 
-?>
 <body>
 
 <br><br><br><br>
