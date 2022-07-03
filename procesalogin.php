@@ -33,7 +33,7 @@ if($cont!=0)
 
       header('Location:MenuPsicologo.php');
     }
-    if($datos['tipo']=="admin"){
+    if($datos['tipo']=="Admin"){
 
       header('Location:MenuAdmin.php');
     }

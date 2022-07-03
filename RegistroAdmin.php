@@ -1,3 +1,21 @@
+<?php
+include("functions/setup.php");
+session_start();
+
+
+$menu="";
+if($_SESSION['tipousu']=="Psicologo"){
+$menu="MenuPsicologo.php";
+}
+
+if($_SESSION['tipousu']=="Secretaria"){
+    $menu="MenuSecretaria.php";
+    }
+if($_SESSION['tipousu']=="Admin"){
+    $menu="MenuAdmin.php";
+}
+
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -30,11 +48,23 @@
 
 <div class="col-6 offset-3 " style="padding-bottom: 500px" >
             <div class="card shadow-soft text-center border-light" id="card">
+
+                
+
                 <form name="form2" action="procesaregistroadmin.php" method="post" enctype="multipart/form-data">
                     <div class="card-body">
-                        <img src="assets\img\iconos\Psicofastlogoround.png">
-                        <br>
-                        <h1 style="color:rgb(120,120,171);" >Registrar Usuario</h1><br>
+                    <br>
+                       <div class="d-flex justify-content-around">
+                            <div class="p-2 "><a href="<?php echo $menu; ?>" class="btn  btn-primary" type="button"><img src="assets\img\iconos\left-arrow.png" height ="30" width="30" /></a></div>
+                            <div class="p-2"><h1 style="color:rgb(120,120,171);" >Registrar Usuarios</h1></div>
+                            <div class="p-2 ">
+                                <button class="btn btn-icon-only btn-pill btn-primary" type="button" aria-label="up button" title="up button">
+                                <img src="assets\fotoperfil\<?php echo $_SESSION['foto']; ?>" height ="145" width="145" Style="border-radius:150px"/>
+                                </button>
+                            </div>
+                        </div>
+                        <br><br><br>
+
                             <div class="row ">
                                 <div class="mb-3 col-6">
                                 <input type="text" class="form-control " id="rut"name="rut" placeholder="RUT">

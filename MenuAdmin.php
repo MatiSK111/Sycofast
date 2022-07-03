@@ -60,7 +60,23 @@ session_start();
                               <a href="RegistroAdmin.php"class="btn btn-lg btn-primary5" type="button"><pre>    <h3 Style="Color:#FFF">  Registrar Usuario   </h3>    </pre><img src="assets\img\iconos\edit.png" height ="50" width="50" /></a>
                             </div>
                             <div class="col">
-                            <a href="Listar_usuadmin.php" class="btn btn-lg btn-primary3" type="button"><pre>    <h3 Style="Color:#FFF">  Modificar Usuarios  </h3>   </pre><img src="assets\img\iconos\verify.png" height ="50" width="50" /></a>
+                            <a href="Listar_usu.php" class="btn btn-lg btn-primary4" type="button"><pre>    <h3 Style="Color:#FFF">  Modificar Usuarios  </h3>   </pre><img src="assets\img\iconos\verify.png" height ="50" width="50" /></a>
+                          </div>
+
+                          <div class="col">
+                          <a href="Enviartest.php" class="btn btn-lg btn-primary5" type="button"><pre>    <h3 Style="Color:#FFF">    Enviar Test      </h3>   </pre><img src="assets\img\iconos\comment.png" height ="50" width="50" /></a>
+                            </div>
+                      </div> 
+
+                      <br><br>
+                    
+                      <div class="container">
+                        <div class="row align-items-end">
+                            <div class="col">
+                            <a href="VerRegistros.php" class="btn btn-lg btn-primary3" type="button"><pre>   <h3 Style="Color:#FFF">    Ver  Registros    </h3>    </pre><img src="assets\img\iconos\verify.png" height ="50" width="50" /></a>
+                            </div>
+                            <div class="col">
+                            <a href="VerTest.php" class="btn btn-lg btn-primary3" type="button"><pre>    <h3 Style="Color:#FFF">       Ver Tests      </h3>    </pre><img src="assets\img\iconos\preview.png" height ="50" width="50" /></a>
                            
                           </div>
                       </div> 

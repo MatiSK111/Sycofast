@@ -15,6 +15,9 @@ $menu="MenuPsicologo.php";
 if($_SESSION['tipousu']=="Secretaria"){
     $menu="MenuSecretaria.php";
     }
+if($_SESSION['tipousu']=="Admin"){
+        $menu="MenuAdmin.php";
+}
 ?>
 <!DOCTYPE html>
 <html>
