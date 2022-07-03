@@ -41,6 +41,7 @@ session_start();
 </head>
 <?php
 $idtest=0;
+$reg="";
 
 $sql="select * from cola where rutpaciente='".$_SESSION['id']."' and estado = 1";
 //echo $sql;
@@ -52,6 +53,7 @@ $datos=mysqli_fetch_array($result);
 if($cont!=0){
 
   $idtest=$datos['idtest'];
+  $reg=$datos['registro'];
 }
 
 ?>
@@ -90,7 +92,7 @@ if($cont!=0){
                         <?php  if($cont=!0){ ?>
 
                           <div class="col">
-                            <a href="procesainiciotest.php?t=<?php echo $idtest;?>&r=<?php echo $_SESSION['id']; ?>"class="btn btn-lg btn-primary" type="button"><pre>    <h3 >   Realizar Test   </h3>    </pre><img src="assets\img\iconos\test.png" height ="50" width="50" /></a>
+                            <a href="procesainiciotest.php?t=<?php echo $idtest;?>&r=<?php echo $_SESSION['id']; ?>&reg=<?php echo $reg;?>"class="btn btn-lg btn-primary" type="button"><pre>    <h3 >   Realizar Test   </h3>    </pre><img src="assets\img\iconos\test.png" height ="50" width="50" /></a>
                             </div>
                             <div class="col">
 

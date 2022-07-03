@@ -57,7 +57,6 @@ if($_GET['p']>=$cont){
   $final=true;
 }
 
-
 $aumento = ($_GET['p']*100)/$cont;
 
 

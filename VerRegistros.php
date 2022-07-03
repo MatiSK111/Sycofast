@@ -2,12 +2,10 @@
 include("functions/setup.php");
 session_start();
 
-$sql="SELECT * FROM usuario";
+$sql="SELECT * FROM registro where estado = 2";
 $result=mysqli_query(conexion(), $sql);
 
 
-$sql2="SELECT * FROM test";
-$result2=mysqli_query(conexion(), $sql2);
 
 $menu="";
 if($_SESSION['tipousu']=="Psicologo"){
@@ -61,7 +59,7 @@ if($_SESSION['tipousu']=="Secretaria"){
 
                     <div class="d-flex justify-content-around">
                             <div class="p-2 "><a href="<?php echo $menu; ?>" class="btn  btn-primary" type="button"><img src="assets\img\iconos\left-arrow.png" height ="30" width="30" /></a></div>
-                            <div class="p-2"><h1 style="color:rgb(120,120,171);" >Enviar Test a Pacientes</h1></div>
+                            <div class="p-2"><h1 style="color:rgb(120,120,171);" >Registro de test</h1></div>
                             <div class="p-2 ">
                                 <button class="btn btn-icon-only btn-pill btn-primary" type="button" aria-label="up button" title="up button">
                                 <img src="assets\fotoperfil\<?php echo $_SESSION['foto']; ?>" height ="145" width="145" Style="border-radius:150px"/>
@@ -73,60 +71,46 @@ if($_SESSION['tipousu']=="Secretaria"){
                 <div class="section  text-dark section-lg" >
 
                         <div class="row justify-content-center" >
-                            <div class="col-lg-10" >
+                            <div class="col-lg-11" >
                            
                                 <div class="mb-5">
                                     <table class="table shadow-soft rounded">
                                         <tr>
-                                            <th class="border-0" scope="col">Tipo</th>
-                                            <th class="border-0" scope="col">Rut</th>
-                                            <th class="border-0" scope="col">Nombre</th>
-                                            <th class="border-0" scope="col">Apellidos</th>
-                                            <th class="border-0" scope="col">Estado</th>
-                                            <?php while($datos2=mysqli_fetch_array($result2)){ 
-                                            ?>
-                                            <th class="border-0" scope="col"><?php echo $datos2['nombre test']; ?></th>
-                                            <?php }
-                                            ?>
+                                            <th class="border-0" scope="col">Nombre Test</th>
+                                            <th class="border-0" scope="col">Id registro</th>
+                                            <th class="border-0" scope="col">Rut Paciente</th>
+                                            <th class="border-0" scope="col">Nombre Paciente</th>
+                                            <th class="border-0" scope="col">Puntaje</th>
+                                            <th class="border-0" scope="col">Resultado</th>
+                                           
                                         </tr>
                                         
                 <?php
                 while($datos=mysqli_fetch_array($result)){
-                    if($datos['tipo']=="Paciente"){
-                
+                   
+                   
+                    $sql3="SELECT * FROM test where idtest = ".$datos['Test_idtest'];
+                    $result3=mysqli_query(conexion(), $sql3);
+                    $datos3=mysqli_fetch_array($result3);
+
+                    $sql4="SELECT * FROM usuario where rut = '".$datos['Usuario_rut']."'";
+                    $result4=mysqli_query(conexion(), $sql4);
+                    $datos4=mysqli_fetch_array($result4)
+                    
                 ?>
                     
-                <tr>
-                                            <td><?php echo $datos['tipo']?></td>
-                                            <td><?php echo $datos['rut']?></td>
-                                            <td><?php echo $datos['nombres']?></td>
-                                            <td><?php echo $datos['Apellidos']?></td>
-                                        
-                                            <td><?php if ($datos['estado']==1){
-                                                        echo "Activo";
-                                                    }else{
-                                                    echo "Inactivo";
-                                                    }
-                                            
-                                            ?></td>
+                                        <tr>
+                                            <td><?php echo $datos3['nombre test']?></td>
+                                            <td><?php echo $datos['idregistro']?></td>
+                                            <td><?php echo $datos['Usuario_rut']?></td>
+                                            <td><?php echo $datos4['nombres']." ".$datos4['Apellidos'] ?></td>
+                                            <td><?php echo $datos['puntaje']?></td>
+                                            <td><?php echo $datos['Resultado']?></td>
 
-                                            <?php 
-                                            $sql3="SELECT * FROM test";
-                                            $result3=mysqli_query(conexion(), $sql3);
-                                            while($datos3=mysqli_fetch_array($result3)){ 
-                                            ?>
-                                            <td><a href="Procesaenvio.php?Rut=<?php echo $datos['rut']?>&te=<?php echo $datos3['idtest']; ?>"class="btn btn-primary" type="button">Enviar</a></td>
-
-                                            <?php }
-                                            ?>
-                                            
-
-                                            
-                                            
                                         </tr>
                 <?php
                     }
-                } ?>
+                 ?>
                 </table>
 
 
